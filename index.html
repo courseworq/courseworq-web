@@ -16,6 +16,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="es_LA">
 <meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0D0D3C">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Courseworq", "legalName": "Courseworq, LLC", "url": "https://courseworq.com/", "logo": "https://courseworq.com/logo.svg", "slogan": "Curiosity crafted", "email": "info@courseworq.com", "telephone": "+1-818-740-6515", "address": {"@type": "PostalAddress", "streetAddress": "131 Continental Dr Suite 305", "addressLocality": "Newark", "addressRegion": "DE", "postalCode": "19713", "addressCountry": "US"}}</script>
@@ -289,6 +290,19 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
 .page span.h{height:9px; width:70%; background:var(--accent); opacity:.8}
 .page span.short{width:60%}
 
+/* Productos: próximamente */
+.products{padding-block:clamp(40px, 5vw, 56px)}
+.soon{
+  display:flex; align-items:center; flex-wrap:wrap; gap:16px 28px;
+  padding:22px clamp(18px, 3vw, 28px); border:1.5px dashed var(--accent); border-radius:18px; background:var(--surface);
+}
+.soon-spark{width:28px; height:28px; fill:var(--gold); flex:none}
+.soon-copy{flex:1 1 320px; min-width:0; display:grid; gap:6px}
+.soon-head{display:flex; align-items:center; flex-wrap:wrap; gap:8px 12px}
+.soon-tag{font-size:.6875rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; padding:4px 10px; border-radius:999px; background:var(--gold); color:var(--on-gold)}
+.soon-title{font-family:var(--f-display); font-size:1.375rem; line-height:1.1}
+.soon-text{color:var(--ink-soft); font-size:.96875rem; max-width:58ch}
+
 /* ---------- Contacto ---------- */
 .contact{position:relative; overflow:hidden; background:var(--band); color:var(--band-ink); padding-block:clamp(72px, 9vw, 112px) clamp(96px, 12vw, 140px)}
 .contact::before{
@@ -352,9 +366,10 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
       <li><a href="#herramientas" data-i18n="nav3">Herramientas</a></li>
     </ul>
     <div class="nav-right">
-      <div class="lang" role="group" aria-label="Idioma / Language">
+      <div class="lang" role="group" aria-label="Idioma / Language / Idioma">
         <button type="button" data-lang="es" aria-pressed="true">ES</button>
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="pt" aria-pressed="false">PT</button>
       </div>
       <a class="btn btn-gold btn-sm nav-cta" href="#contacto" data-i18n="navCta">Conversemos</a>
     </div>
@@ -536,6 +551,20 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
     </div>
   </section>
 
+  <!-- Productos -->
+  <section class="products" id="productos">
+    <div class="wrap">
+      <div class="soon">
+        <svg class="soon-spark" aria-hidden="true"><use href="#sparkle"/></svg>
+        <div class="soon-copy">
+          <p class="soon-head"><span class="soon-tag" data-i18n="prodTag">Próximamente</span><span class="soon-title" data-i18n="prodTitle">Productos</span></p>
+          <p class="soon-text" data-i18n="prodText">Somos partners de varios productos digitales y pronto podrás conocerlos aquí. Mientras tanto, pídenos información.</p>
+        </div>
+        <a class="btn btn-primary btn-sm" id="prod-link" href="mailto:info@courseworq.com?subject=Informaci%C3%B3n%20sobre%20productos" data-i18n="prodBtn">Pedir información</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Contacto -->
   <section class="contact" id="contacto">
     <svg class="spark one" aria-hidden="true"><use href="#sparkle"/></svg>
@@ -627,9 +656,54 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
     cl:"Write to us and let's talk about what you want your participants to take away.",
     mailLbl:'Email', phoneLbl:'Phone', b1:'Send an email', b2:'Copy email', b3:'Call',
     addrLbl:'Address', country:'United States', rights:'All rights reserved.',
+    prodTag:'Coming soon', prodTitle:'Products',
+    prodText:"We partner with several digital products, and you'll be able to explore them here soon. In the meantime, ask us for details.",
+    prodBtn:'Ask for information', prodSubject:'Product information',
     copied:'Email copied.', selectIt:'Select the email and copy it.', subject:'Project with Courseworq'
   };
-  var ES = { copied:'Correo copiado.', selectIt:'Selecciona el correo y cópialo.', subject:'Proyecto con Courseworq' };
+  var PT = {
+    nav1:'O que fazemos', nav2:'Como trabalhamos', nav3:'Ferramentas', navCta:'Vamos conversar',
+    h1:'Projetamos experiências de aprendizagem que são sentidas, vividas e <span class="mark">lembradas.</span>',
+    lede:'A Courseworq é uma consultoria de Learning Experience Design. Trabalhamos com trainers e facilitadores para transformar seu conteúdo em sessões com propósito claro, bom ritmo e aqueles momentos “aha!” que as pessoas levam para casa.',
+    cta1:'Conte-nos sobre seu projeto', cta2:'Veja como trabalhamos',
+    canvasAria:'Exemplo de uma sessão desenhada no Session Design Canvas',
+    tagEx:'Exemplo', lblPurpose:'Propósito', lblLearner:'Aprendiz', lblMoment:'Momento-chave',
+    noteGold:'Que cada líder saia com uma conversa difícil já planejada.',
+    noteBlue:'20 líderes de equipe. Muita experiência, pouco tempo.',
+    noteRed:'O ensaio em duplas, na metade da sessão.',
+    rosAria:'Abertura 10 minutos, contexto 15, prática em duplas 35, debrief 20 e encerramento 10.',
+    ros1:'Abertura', ros2:'Contexto', ros3:'Prática em duplas', ros4:'Debrief', ros5:'Encerramento',
+    k1:'O que fazemos', h2a:'Você conhece o tema. Nós ajudamos as pessoas a aprendê-lo.',
+    s1t:'Desenho de sessões e programas',
+    s1p:'Pegamos seu conteúdo e o transformamos em uma experiência: objetivos de aprendizagem claros, atividades com intenção e um run of show que funciona na sala ou online.',
+    s2t:'Materiais de facilitação',
+    s2p:'Guias para facilitadores, canvases, workbooks e decks com identidade própria. Prontos para usar e pensados para que outras pessoas possam facilitar com eles.',
+    s3t:'Acompanhamento de facilitadores',
+    s3p:'Coaching e programas para que quem facilita desenhe e conduza suas próprias sessões com confiança. De um ensaio com feedback a uma incubadora completa.',
+    aud:'Trabalhamos com', c1:'Trainers e instrutores', c2:'Facilitadores', c3:'Times de L&D e talentos', c4:'Agile Coaches e Scrum Masters', c5:'Conferências e comunidades',
+    k2:'Como trabalhamos', h2b:'Quatro passos e uma sessão que melhora a cada vez.',
+    st1:'Entender', st2:'Desenhar', st3:'Produzir', st4:'Iterar',
+    st1p:'Começamos pelo propósito e por quem aprende. O que precisa mudar depois da sessão e o que seus participantes já trazem.',
+    st2p:'Montamos a sessão no Session Design Canvas, com objetivos baseados na taxonomia de Bloom, atividades, tempos e momentos-chave.',
+    st3p:'Criamos o que a sessão precisa para acontecer: deck, guia do facilitador, canvases e workbooks.',
+    st4p:'Depois de cada edição, revisamos com você o que funcionou e ajustamos. Uma sessão melhora cada vez que é facilitada.',
+    loop:'O que aprendemos em uma edição alimenta a próxima.',
+    k3:'Ferramentas Courseworq', h2c:'Usamos em cada projeto e compartilhamos com você.',
+    metaCanvas:'Canvas · A3 horizontal', metaGuide:'Guia para facilitadores',
+    t1:'Desenhe uma sessão completa em uma única folha, do propósito ao run of show.',
+    t2:'Para desenhar conversas que importam, como fóruns, painéis e espaços onde a discussão é o conteúdo.',
+    t3:'Nosso guia passo a passo para facilitadores que desenham fóruns e conversas com intenção.',
+    prodTag:'Em breve', prodTitle:'Produtos',
+    prodText:'Somos parceiros de vários produtos digitais e em breve você poderá conhecê-los aqui. Enquanto isso, peça informações.',
+    prodBtn:'Pedir informações', prodSubject:'Informações sobre produtos',
+    k5:'Contato', h2d:'Tem uma sessão, um workshop ou um programa em mente?',
+    cl:'Escreva para nós e vamos conversar sobre o que você quer que seus participantes levem.',
+    mailLbl:'E-mail', phoneLbl:'Telefone', b1:'Enviar e-mail', b2:'Copiar e-mail', b3:'Ligar',
+    addrLbl:'Endereço', country:'Estados Unidos', rights:'Todos os direitos reservados.',
+    copied:'E-mail copiado.', selectIt:'Selecione o e-mail e copie.', subject:'Projeto com a Courseworq'
+  };
+  var ES = { copied:'Correo copiado.', selectIt:'Selecciona el correo y cópialo.', subject:'Proyecto con Courseworq', prodSubject:'Información sobre productos' };
+  var DICTS = { es: ES, en: EN, pt: PT };
   var textEls = document.querySelectorAll('[data-i18n]');
   var htmlEls = document.querySelectorAll('[data-i18n-html]');
   var ariaEls = document.querySelectorAll('[data-i18n-aria]');
@@ -640,19 +714,21 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
   var address = 'info@courseworq.com';
   var current = 'es';
   var mailLink = document.getElementById('mail-link');
+  var prodLink = document.getElementById('prod-link');
   var status = document.getElementById('copy-status');
   var buttons = document.querySelectorAll('.lang button');
 
-  function t(key){ var d = current === 'en' ? EN : ES; return d[key] != null ? d[key] : ES[key]; }
+  function t(key){ var d = DICTS[current] || ES; return d[key] != null ? d[key] : ES[key]; }
 
   function setLang(lang, save){
-    current = lang === 'en' ? 'en' : 'es';
+    current = DICTS[lang] ? lang : 'es';
     textEls.forEach(function(el){ el.textContent = t(el.getAttribute('data-i18n')); });
     htmlEls.forEach(function(el){ el.innerHTML = t(el.getAttribute('data-i18n-html')); });
     ariaEls.forEach(function(el){ el.setAttribute('aria-label', t(el.getAttribute('data-i18n-aria'))); });
-    document.documentElement.lang = current;
+    document.documentElement.lang = current === 'pt' ? 'pt-BR' : current;
     buttons.forEach(function(b){ b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === current)); });
     mailLink.href = 'mailto:' + address + '?subject=' + encodeURIComponent(t('subject'));
+    prodLink.href = 'mailto:' + address + '?subject=' + encodeURIComponent(t('prodSubject'));
     status.textContent = '';
     if (save) { try { localStorage.setItem('cwq-lang', current); } catch (e) {} }
   }
@@ -661,14 +737,15 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
     b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang'), true); });
   });
 
+  function fromBrowser(){
+    var l = (navigator.language || '').toLowerCase().slice(0, 2);
+    return DICTS[l] ? l : 'es';
+  }
   var start = 'es';
   try {
     var saved = localStorage.getItem('cwq-lang');
-    if (saved === 'es' || saved === 'en') start = saved;
-    else if ((navigator.language || '').toLowerCase().indexOf('en') === 0) start = 'en';
-  } catch (e) {
-    if ((navigator.language || '').toLowerCase().indexOf('en') === 0) start = 'en';
-  }
+    start = DICTS[saved] ? saved : fromBrowser();
+  } catch (e) { start = fromBrowser(); }
   setLang(start, false);
 
   var mail = document.getElementById('mail');
