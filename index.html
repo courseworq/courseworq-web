@@ -40,6 +40,7 @@
   --on-gold:#0D0D3C; --card:#FFFFFF; --card-line:#FFFFFF;
   --paper:#FFFFFF; --paper-ink:#0D0D3C; --paper-soft:#4B4D72; --paper-line:#D9DCEE;
   --tape:rgba(249,180,56,.55); --tape-blue:rgba(82,140,255,.42);
+  --blob-blue:#DCE6FF; --blob-gold:#FDEBC2; --blob-red:#FAD6DD;
   --hl-a:rgba(82,140,255,.28); --hl-b:rgba(249,180,56,.45); --hl-c:rgba(237,62,92,.25); --on-blue:#0D0D3C; --on-red:#FFFFFF;
   --shadow:0 1px 2px rgba(13,13,60,.06), 0 18px 40px -18px rgba(13,13,60,.22);
   --note-shadow:0 1px 1px rgba(13,13,60,.08), 0 6px 14px -6px rgba(13,13,60,.25);
@@ -257,8 +258,9 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
 .chips li:nth-child(odd){--hl:var(--hl-a)} .chips li:nth-child(even){--hl:var(--hl-b)} .chips li:nth-child(3){--hl:var(--hl-c)}
 .head-art{display:grid; grid-template-columns:minmax(0,1fr) auto; gap:24px; align-items:end}
 .art{display:block; height:auto; max-width:100%}
-.art-idea{width:clamp(130px, 16vw, 190px); aspect-ratio:1; border-radius:50%; background:var(--paper); display:grid; place-items:center; transform:rotate(-3deg)}
-.art-idea img{width:88%; height:auto; display:block}
+.art-idea{width:clamp(140px, 17vw, 210px); aspect-ratio:1; display:grid; place-items:center; position:relative; isolation:isolate}
+.art-idea::before{content:""; position:absolute; inset:12% 8% 4% 10%; z-index:-1; background:var(--blob-gold); border-radius:45% 55% 48% 52% / 55% 45% 55% 45%; transform:rotate(-10deg)}
+.art-idea img{width:100%; height:auto; display:block}
 @media (max-width:560px){ .head-art{grid-template-columns:minmax(0,1fr)} .art-idea{width:130px; justify-self:end; margin-top:-8px} }
 
 /* Cómo trabajamos */
@@ -269,10 +271,25 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
 }
 .steps::before{display:none}
 .step{position:relative; display:grid; gap:8px; align-content:start; min-width:0; padding-left:0}
-.step-art{background:var(--paper); border-radius:3px; padding:10px; margin-bottom:14px;
-  box-shadow:0 1px 0 rgba(13,13,60,.06), 0 14px 24px -18px rgba(13,13,60,.45)}
-.step:nth-child(odd) .step-art{transform:rotate(-1.4deg)} .step:nth-child(even) .step-art{transform:rotate(1.2deg)}
-.step-art img{display:block; width:100%; height:auto; aspect-ratio:1}
+.step-art{position:relative; isolation:isolate; margin:0 0 14px; aspect-ratio:1; display:grid; place-items:center}
+.step-art::before{
+  content:""; position:absolute; inset:9% 6% 5% 8%; z-index:-1; background:var(--blob);
+  border-radius:58% 42% 55% 45% / 47% 58% 42% 53%; transform:rotate(var(--blob-r, 0deg));
+}
+.step-art::after{
+  content:""; position:absolute; z-index:-1; width:14%; aspect-ratio:1; border-radius:50%;
+  background:var(--dot); right:4%; top:6%;
+}
+.step:nth-child(1) .step-art{--blob:var(--blob-blue); --dot:var(--gold); --blob-r:-8deg}
+.step:nth-child(2) .step-art{--blob:var(--blob-gold); --dot:var(--red); --blob-r:12deg}
+.step:nth-child(3) .step-art{--blob:var(--blob-red); --dot:var(--blue); --blob-r:-4deg}
+.step:nth-child(4) .step-art{--blob:var(--blob-blue); --dot:var(--gold); --blob-r:20deg}
+.step:nth-child(2) .step-art::after{left:2%; right:auto; top:auto; bottom:10%; width:10%}
+.step:nth-child(4) .step-art::after{top:auto; bottom:6%; width:9%}
+.step-art img{display:block; width:96%; height:auto; aspect-ratio:1}
+/* En oscuro la mancha cubre toda la ilustración, para que los trazos navy no se pierdan */
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .step-art::before{inset:-4%; border-radius:46% 54% 50% 50% / 50% 46% 54% 50%} :root:not([data-theme="light"]) .art-idea::before, :root:not([data-theme="light"]) .contact-art::before{inset:-2%} }
+:root[data-theme="dark"] .step-art::before{inset:-4%; border-radius:46% 54% 50% 50% / 50% 46% 54% 50%} :root[data-theme="dark"] .art-idea::before, :root[data-theme="dark"] .contact-art::before{inset:-2%}
 .step h3{display:flex; align-items:center; gap:10px}
 .step h3::before{
   counter-increment:step; content:counter(step); flex:none;
@@ -390,8 +407,10 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
 .mail-label{font-size:.75rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--band-soft)}
 .mail{font-family:var(--f-display); font-size:clamp(1.5rem, 3.2vw, 2.25rem); line-height:1.15; overflow-wrap:anywhere; user-select:all; -webkit-user-select:all}
 .contact .actions{margin-top:4px}
-.contact-art{width:clamp(120px, 13vw, 170px); height:clamp(120px, 13vw, 170px); border-radius:50%; background:var(--paper); display:flex; align-items:flex-end; justify-content:center; overflow:hidden; margin-bottom:22px; box-shadow:0 0 0 6px var(--band), 0 0 0 8px var(--gold)}
-.contact-art img{width:96%; height:96%; display:block; flex:none; margin-bottom:-8%}
+.contact-art{width:clamp(130px, 14vw, 180px); aspect-ratio:1; position:relative; isolation:isolate; display:grid; place-items:center; margin-bottom:18px}
+.contact-art::before{content:""; position:absolute; inset:-6%; z-index:-1; background:var(--blob-blue); border-radius:52% 48% 44% 56% / 46% 56% 44% 54%; transform:rotate(14deg)}
+.contact-art::after{content:""; position:absolute; z-index:-1; width:16%; aspect-ratio:1; border-radius:50%; background:var(--gold); left:0; top:12%}
+.contact-art img{width:100%; height:auto; display:block}
 .btn-gold{background:var(--gold); color:var(--on-gold)}
 .btn-outline-band{background:transparent; color:var(--band-ink); border-color:var(--band-line)}
 .btn-outline-band:hover{border-color:var(--band-soft)}
@@ -579,22 +598,22 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
       <h2 data-i18n="h2b">Cuatro pasos, y una sesión que mejora cada vez.</h2>
       <ol class="steps">
         <li class="step">
-          <div class="step-art taped one"><img src="ilustraciones/entender.svg" alt="" width="240" height="240" loading="lazy"></div>
+          <div class="step-art"><img src="ilustraciones/entender.svg" alt="" width="240" height="240" loading="lazy"></div>
           <h3 data-i18n="st1">Entender</h3>
           <p data-i18n="st1p">Empezamos por el propósito y por quién aprende. Qué tiene que cambiar después de la sesión y qué traen ya tus participantes.</p>
         </li>
         <li class="step">
-          <div class="step-art taped one blue"><img src="ilustraciones/disenar.svg" alt="" width="240" height="240" loading="lazy"></div>
+          <div class="step-art"><img src="ilustraciones/disenar.svg" alt="" width="240" height="240" loading="lazy"></div>
           <h3 data-i18n="st2">Diseñar</h3>
           <p data-i18n="st2p">Armamos la sesión en el Session Design Canvas, con objetivos según la taxonomía de Bloom, actividades, tiempos y momentos clave.</p>
         </li>
         <li class="step">
-          <div class="step-art taped one"><img src="ilustraciones/producir.svg" alt="" width="240" height="240" loading="lazy"></div>
+          <div class="step-art"><img src="ilustraciones/producir.svg" alt="" width="240" height="240" loading="lazy"></div>
           <h3 data-i18n="st3">Producir</h3>
           <p data-i18n="st3p">Creamos lo que la sesión necesita para correr: deck, guía del facilitador, canvases y workbooks.</p>
         </li>
         <li class="step">
-          <div class="step-art taped one blue"><img src="ilustraciones/iterar.svg" alt="" width="240" height="240" loading="lazy"></div>
+          <div class="step-art"><img src="ilustraciones/iterar.svg" alt="" width="240" height="240" loading="lazy"></div>
           <h3 data-i18n="st4">Iterar</h3>
           <p data-i18n="st4p">Después de cada corrida revisamos contigo qué funcionó y ajustamos. Una sesión mejora cada vez que se facilita.</p>
         </li>
@@ -693,7 +712,7 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
     <svg class="spark two" aria-hidden="true"><use href="#sparkle"/></svg>
     <div class="wrap contact-inner">
       <div>
-        <div class="contact-art"><img src="ilustraciones/richie.svg" alt="" width="170" height="170"></div>
+        <div class="contact-art"><img src="ilustraciones/conversemos.svg" alt="" width="170" height="170"></div>
         <p class="kicker" data-i18n="k5">Contacto</p>
         <h2 data-i18n="h2d">¿Tienes una sesión, un taller o un programa en mente?</h2>
         <p class="contact-lede" data-i18n="cl">Escríbenos y conversemos sobre lo que quieres que tus participantes se lleven.</p>
