@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página no encontrada · Courseworq</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+<style>
+@font-face{font-family:"Achiko";src:url("/fonts/achiko.woff2") format("woff2");font-display:swap}
+:root{--band:#0D0D3C;--ink:#F4F5FC;--soft:#B9BCE0;--gold:#F9B438;--blue:#528CFF;--paper:#FFFFFF}
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--band);color:var(--ink);font:400 1rem/1.6 "Poppins","Segoe UI",system-ui,sans-serif;display:grid;place-items:center;overflow-x:hidden;position:relative}
+body::before{content:"";position:absolute;top:0;right:0;width:min(40vw,440px);height:min(14vw,150px);background:var(--blue);border-bottom-left-radius:100% 100%}
+body::after{content:"";position:absolute;bottom:0;left:0;width:min(32vw,360px);height:min(10vw,110px);background:var(--blue);border-top-right-radius:100% 100%}
+main{position:relative;z-index:1;display:grid;justify-items:center;text-align:center;gap:14px;padding:48px max(16px, env(safe-area-inset-left,0px));max-width:620px}
+.art{width:min(300px,72vw);aspect-ratio:1;border-radius:50%;background:var(--paper);display:grid;place-items:center;box-shadow:0 0 0 8px var(--band),0 0 0 10px var(--gold)}
+.art img{width:86%;height:auto;display:block}
+.code{font-family:"Achiko","Arial Rounded MT Bold",sans-serif;color:var(--gold);font-size:1.25rem;letter-spacing:.06em;margin:18px 0 0}
+h1{font-family:"Achiko","Arial Rounded MT Bold",sans-serif;font-weight:400;font-size:clamp(2rem,6vw,3rem);line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0;color:var(--soft);max-width:44ch}
+a.btn{margin-top:10px;display:inline-flex;padding:13px 24px;border-radius:999px;background:var(--gold);color:#0D0D3C;font-weight:600;text-decoration:none}
+a.btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.lang{position:absolute;top:16px;left:max(16px, env(safe-area-inset-left,0px));z-index:2;display:inline-flex;padding:3px;border:1px solid #34378A;border-radius:999px}
+.lang button{border:0;background:transparent;color:var(--soft);font:600 .75rem/1 "Poppins",sans-serif;padding:7px 10px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--gold);color:#0D0D3C}
+</style>
+<script data-goatcounter="https://courseworq.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="lang" role="group" aria-label="Idioma / Language / Idioma">
+  <button type="button" data-lang="es" aria-pressed="true">ES</button>
+  <button type="button" data-lang="en" aria-pressed="false">EN</button>
+  <button type="button" data-lang="pt" aria-pressed="false">PT</button>
+</div>
+<main>
+  <div class="art"><img src="/ilustraciones/sin-conexion.svg" alt="" width="270" height="270"></div>
+  <p class="code">404</p>
+  <h1 id="t">Esta página se quedó sin señal.</h1>
+  <p id="d">Ya revisamos el router y nada: la página que buscas no existe o se movió.</p>
+  <a class="btn" id="b" href="/">Volver al inicio</a>
+</main>
+<script>
+(function(){
+  var T={es:['Esta página se quedó sin señal.','Ya revisamos el router y nada: la página que buscas no existe o se movió.','Volver al inicio','Página no encontrada · Courseworq'],
+         en:['This page lost its signal.','We already checked the router. The page you\u2019re looking for doesn\u2019t exist or has moved.','Back to home','Page not found · Courseworq'],
+         pt:['Esta página ficou sem sinal.','Já verificamos o roteador: a página que você procura não existe ou mudou de lugar.','Voltar ao início','Página não encontrada · Courseworq']};
+  var bs=document.querySelectorAll('.lang button');
+  function set(l,save){ if(!T[l]) l='es'; var x=T[l];
+    document.getElementById('t').textContent=x[0]; document.getElementById('d').textContent=x[1]; document.getElementById('b').textContent=x[2]; document.title=x[3];
+    document.documentElement.lang=l==='pt'?'pt-BR':l;
+    bs.forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-lang')===l));});
+    if(save){try{localStorage.setItem('cwq-lang',l);}catch(e){}} }
+  bs.forEach(function(b){b.addEventListener('click',function(){set(b.getAttribute('data-lang'),true);});});
+  var s; try{s=localStorage.getItem('cwq-lang');}catch(e){}
+  set(T[s]?s:(navigator.language||'').slice(0,2).toLowerCase(),false);
+})();
+</script>
+</body>
+</html>
