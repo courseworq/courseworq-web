@@ -84,6 +84,11 @@ input:focus, select:focus, button:focus-visible{outline:3px solid var(--blue); o
 .done h2{font-family:var(--f-display); font-weight:400; font-size:1.75rem; margin:0}
 .done p{color:var(--ink-soft); margin:8px 0 0}
 
+.ig{margin-top:22px; padding:18px; border-radius:3px; background:var(--paper); display:grid; gap:12px; box-shadow:0 16px 28px -22px rgba(13,13,60,.45)}
+.ig p{margin:0}
+.btn-ig{background:var(--navy); color:#FFFFFF; gap:10px; text-decoration:none}
+.btn-ig svg{width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2}
+@media (prefers-color-scheme: dark){ .btn-ig{background:var(--blue); color:var(--navy)} }
 details{margin-top:34px; border-top:1px solid var(--line); padding-top:18px}
 summary{cursor:pointer; font-weight:600}
 details ol{padding-left:1.2em; margin:12px 0 0; font-size:.875rem; color:var(--ink-soft); display:grid; gap:8px}
@@ -166,6 +171,10 @@ footer a{color:var(--ink-soft)}
     <div class="art"><img src="/ilustraciones/idea.svg" alt="" width="150" height="150"></div>
     <h2 data-t="doneH">¡Ya estás participando!</h2>
     <p data-t="doneP">Te mandamos un correo de confirmación desde info@courseworq.com. Si no lo ves, revisa tu carpeta de promociones o spam.</p>
+    <div class="ig">
+      <p data-t="igP">Mientras esperas el sorteo, síguenos en Instagram. Ahí anunciamos a quien gane.</p>
+      <a class="btn btn-ig" href="https://www.instagram.com/courseworq.lxd/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg><span data-t="igBtn">Seguir a @courseworq.lxd</span></a>
+    </div>
   </section>
 
   <details id="reglamento">
@@ -205,6 +214,7 @@ footer a{color:var(--ink-soft)}
       lName:'Full name', lEmail:'Email', lCountry:'Country', pick:'Choose your country', other:'Other',
       cPresent:'I’m at the Regional Scrum Gathering Central America 2026 and can receive the book there.',
       cConsent:'I agree to subscribe to the Courseworq newsletter and to the <a href="#reglamento">raffle rules</a>.',
+      igP:'While you wait for the draw, follow us on Instagram. That\u2019s where we announce the winner.', igBtn:'Follow @courseworq.lxd',
       submit:'Enter the raffle', doneH:'You’re in!', doneP:'We sent a confirmation email from info@courseworq.com. If you don’t see it, check your promotions or spam folder.',
       rulesT:'Raffle rules',
       r1:'Organized by Courseworq, LLC (131 Continental Dr Suite 305, Newark, DE 19713, United States), at the Regional Scrum Gathering Central America 2026 in Antigua Guatemala.',
@@ -230,6 +240,7 @@ footer a{color:var(--ink-soft)}
       lName:'Nome completo', lEmail:'E-mail', lCountry:'País', pick:'Escolha seu país', other:'Outro',
       cPresent:'Estou no Regional Scrum Gathering Central America 2026 e posso receber o livro lá.',
       cConsent:'Aceito me inscrever na newsletter da Courseworq e o <a href="#reglamento">regulamento do sorteio</a>.',
+      igP:'Enquanto espera o sorteio, siga a gente no Instagram. É lá que anunciamos o ganhador.', igBtn:'Seguir @courseworq.lxd',
       submit:'Quero participar', doneH:'Você está participando!', doneP:'Enviamos um e-mail de confirmação de info@courseworq.com. Se não aparecer, confira a pasta de promoções ou spam.',
       rulesT:'Regulamento do sorteio',
       r1:'Organizado pela Courseworq, LLC (131 Continental Dr Suite 305, Newark, DE 19713, Estados Unidos), no Regional Scrum Gathering Central America 2026, em Antigua Guatemala.',
