@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rifa Scrum Mastery · Courseworq</title>
+<meta name="description" content="Participa en la rifa de un ejemplar firmado de Scrum Mastery de Geoff Watts en español. Exclusiva para asistentes del Regional Scrum Gathering Centroamérica 2026.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0D0D3C">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+<style>
+/* Una sola columna pensada para celular: se abre desde un QR en el evento */
+@font-face{font-family:"Achiko";src:url("/fonts/achiko.woff2") format("woff2");font-display:swap}
+:root{
+  --navy:#0D0D3C; --blue:#528CFF; --red:#ED3E5C; --gold:#F9B438;
+  --bg:#F6F7FC; --paper:#FFFFFF; --ink:#0D0D3C; --ink-soft:#4B4D72; --line:#D9DCEE; --accent-ink:#2B5BD1;
+  --band:#0D0D3C; --band-ink:#F4F5FC; --band-soft:#B9BCE0; --band-line:#34378A;
+  --blob:#FDEBC2; --err:#C42847;
+  --f-display:"Achiko","Arial Rounded MT Bold","Trebuchet MS",sans-serif;
+  --f-body:"Poppins","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0B0B33; --paper:#13134A; --ink:#F2F3FB; --ink-soft:#B4B7DA; --line:#2B2D6E; --accent-ink:#93B4FF; --err:#FF7A93; color-scheme:dark }
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0; background:var(--bg); color:var(--ink); font:400 1rem/1.6 var(--f-body); -webkit-font-smoothing:antialiased}
+.wrap{max-width:560px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px))}
+a{color:var(--accent-ink)}
+.sr-only{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+[hidden]{display:none!important}
+
+header{background:var(--band); color:var(--band-ink); position:relative; overflow:hidden}
+header::after{content:""; position:absolute; top:0; right:0; width:min(46vw,260px); height:min(18vw,96px); background:var(--blue); border-bottom-left-radius:100% 100%}
+.top{display:flex; align-items:center; justify-content:space-between; gap:12px; padding-block:14px; position:relative; z-index:1}
+.top img{height:30px; width:auto; display:block}
+.lang{display:inline-flex; padding:3px; border:1px solid var(--band-line); border-radius:999px; background:var(--band)}
+.lang button{border:0; background:transparent; color:var(--band-soft); font:600 .75rem/1 var(--f-body); letter-spacing:.06em; padding:7px 10px; border-radius:999px; cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--gold); color:var(--navy)}
+.hero{padding-block:18px 34px; position:relative; z-index:1}
+.eyebrow{display:inline-block; font-size:.75rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--gold)}
+h1{font-family:var(--f-display); font-weight:400; font-size:clamp(2.1rem, 9vw, 3rem); line-height:1.02; margin:10px 0 0; text-wrap:balance}
+h1 .mark{padding-bottom:.14em; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 24' preserveAspectRatio='none'%3E%3Cpath d='M4 15 C 40 9, 80 18, 120 12 S 200 8, 240 13 S 285 10, 296 9' fill='none' stroke='%23F9B438' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat left bottom / 100% .32em; -webkit-box-decoration-break:clone; box-decoration-break:clone}
+.hero p{color:var(--band-soft); margin:14px 0 0}
+
+.prize{display:grid; grid-template-columns:118px minmax(0,1fr); gap:16px; align-items:center; margin-top:-18px; position:relative; z-index:2}
+.art{position:relative; isolation:isolate; aspect-ratio:1}
+.art::before{content:""; position:absolute; inset:-4%; z-index:-1; background:var(--blob); border-radius:52% 48% 44% 56% / 46% 56% 44% 54%; transform:rotate(-8deg)}
+.art img{width:100%; height:auto; display:block}
+.card{background:var(--paper); border-radius:3px; padding:14px 16px; box-shadow:0 1px 0 rgba(13,13,60,.06), 0 16px 28px -20px rgba(13,13,60,.5); transform:rotate(.6deg); position:relative}
+.card::before{content:""; position:absolute; top:-10px; left:16px; width:58px; height:18px; background:rgba(249,180,56,.6); transform:rotate(-6deg)}
+.card b{display:block; font-family:var(--f-display); font-weight:400; font-size:1.375rem; line-height:1.1}
+.card span{display:block; font-size:.875rem; color:var(--ink-soft); margin-top:4px}
+
+main{padding-block:28px 48px}
+.facts{list-style:none; margin:0; padding:0; display:grid; gap:10px}
+.facts li{display:grid; grid-template-columns:28px minmax(0,1fr); gap:10px; align-items:start; font-size:.9375rem}
+.facts svg{width:24px; height:24px; fill:none; stroke:var(--accent-ink); stroke-width:2; stroke-linecap:round; stroke-linejoin:round; margin-top:1px}
+
+.state{margin-top:26px; padding:22px 18px; border-radius:3px; background:var(--paper); text-align:center; box-shadow:0 16px 28px -22px rgba(13,13,60,.45)}
+.state h2{font-family:var(--f-display); font-weight:400; font-size:1.5rem; margin:0}
+.state p{margin:8px 0 0; color:var(--ink-soft)}
+.count{display:flex; justify-content:center; gap:10px; margin-top:16px; font-variant-numeric:tabular-nums}
+.count div{min-width:62px; padding:10px 6px; border-radius:3px; background:var(--bg)}
+.count b{display:block; font-family:var(--f-display); font-weight:400; font-size:1.75rem; line-height:1}
+.count span{font-size:.6875rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft)}
+
+form{margin-top:26px; display:grid; gap:14px}
+label{display:grid; gap:6px; font-weight:600; font-size:.875rem}
+input[type=text], input[type=email], select{
+  width:100%; font:inherit; font-size:1rem; font-weight:400; padding:12px 14px; border-radius:10px;
+  border:1.5px solid var(--line); background:var(--paper); color:var(--ink);
+}
+input:focus, select:focus, button:focus-visible{outline:3px solid var(--blue); outline-offset:2px}
+.check{display:grid; grid-template-columns:22px minmax(0,1fr); gap:10px; align-items:start; font-weight:400; font-size:.875rem; color:var(--ink-soft)}
+.check input{width:20px; height:20px; margin:2px 0 0; accent-color:var(--blue)}
+.err{min-height:1.2em; margin:0; font-size:.875rem; color:var(--err)}
+.err:empty{display:none}
+.btn{display:inline-flex; justify-content:center; align-items:center; width:100%; border:0; padding:15px 22px; border-radius:999px; background:var(--gold); color:var(--navy); font:600 1rem/1.2 var(--f-body); cursor:pointer}
+.btn[disabled]{opacity:.6; cursor:progress}
+
+.done{margin-top:26px; text-align:center}
+.done .art{width:150px; margin:0 auto 10px}
+.done h2{font-family:var(--f-display); font-weight:400; font-size:1.75rem; margin:0}
+.done p{color:var(--ink-soft); margin:8px 0 0}
+
+details{margin-top:34px; border-top:1px solid var(--line); padding-top:18px}
+summary{cursor:pointer; font-weight:600}
+details ol{padding-left:1.2em; margin:12px 0 0; font-size:.875rem; color:var(--ink-soft); display:grid; gap:8px}
+footer{padding-block:24px 36px; font-size:.8125rem; color:var(--ink-soft); text-align:center}
+footer a{color:var(--ink-soft)}
+</style>
+<script data-goatcounter="https://courseworq.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header>
+  <div class="wrap top">
+    <a href="/" aria-label="Courseworq"><img src="/logo-white.svg" alt="Courseworq" width="100" height="30"></a>
+    <div class="lang" role="group" aria-label="Idioma / Language / Idioma">
+      <button type="button" data-lang="es" aria-pressed="true">ES</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="pt" aria-pressed="false">PT</button>
+    </div>
+  </div>
+  <div class="wrap hero">
+    <span class="eyebrow" data-t="eyebrow">RSGCA26 · Antigua Guatemala</span>
+    <h1 data-th="h1">Llévate un <span class="mark">Scrum Mastery</span> firmado</h1>
+    <p data-t="lede">Rifamos un ejemplar de Scrum Mastery de Geoff Watts, en español y firmado, entre quienes estén en el Regional Scrum Gathering Centroamérica 2026.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="prize">
+    <div class="art"><img src="/ilustraciones/libro.svg" alt="" width="118" height="118"></div>
+    <div class="card"><b>Scrum Mastery</b><span data-t="prizeSub">Geoff Watts · Edición en español · Firmado</span></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <ul class="facts">
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg><span data-t="f1">Inscripciones solo el viernes 6 de noviembre, durante el evento.</span></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span data-t="f2">Puedes venir de cualquier país; solo tienes que estar en el evento para recibir el libro.</span></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg><span data-t="f3">Participas al suscribirte a nuestro newsletter. Es gratis y puedes darte de baja cuando quieras.</span></li>
+  </ul>
+
+  <!-- Antes de abrir -->
+  <section class="state" id="st-before" hidden>
+    <h2 data-t="beforeH">La rifa abre el 6 de noviembre</h2>
+    <p data-t="beforeP">Vuelve a esta página el viernes durante el Gathering.</p>
+    <div class="count" aria-live="off">
+      <div><b id="cd-d">0</b><span data-t="days">días</span></div>
+      <div><b id="cd-h">0</b><span data-t="hours">horas</span></div>
+      <div><b id="cd-m">0</b><span data-t="mins">min</span></div>
+    </div>
+  </section>
+
+  <!-- Cerrada -->
+  <section class="state" id="st-after" hidden>
+    <h2 data-t="afterH">La rifa ya cerró</h2>
+    <p data-t="afterP">Gracias por participar. Si te inscribiste, revisa tu correo: ahí te contamos cómo sigue.</p>
+  </section>
+
+  <!-- Formulario -->
+  <form id="raffle" novalidate hidden>
+    <label><span data-t="lName">Nombre completo</span>
+      <input id="r-name" name="name" type="text" autocomplete="name" required maxlength="80">
+    </label>
+    <label><span data-t="lEmail">Correo</span>
+      <input id="r-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="120">
+    </label>
+    <label><span data-t="lCountry">País</span>
+      <select id="r-country" name="country" required>
+        <option value="" data-t="pick">Elige tu país</option>
+        <option>Guatemala</option><option>El Salvador</option><option>Honduras</option><option>Nicaragua</option><option>Costa Rica</option><option>Panamá</option><option>Belice</option><option>México</option><option>República Dominicana</option><option>Colombia</option><option>Perú</option><option>Chile</option><option>Argentina</option><option>Brasil</option><option>Estados Unidos</option><option>España</option><option value="Otro" data-t="other">Otro</option>
+      </select>
+    </label>
+    <input id="r-honey" name="website" type="text" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <label class="check"><input id="r-present" type="checkbox" required><span data-t="cPresent">Estoy en el Regional Scrum Gathering Centroamérica 2026 y puedo recibir el libro ahí.</span></label>
+    <label class="check"><input id="r-consent" type="checkbox" required><span data-th="cConsent">Acepto suscribirme al newsletter de Courseworq y el <a href="#reglamento">reglamento de la rifa</a>.</span></label>
+    <p class="err" id="r-err" aria-live="polite"></p>
+    <button class="btn" id="r-btn" type="submit" data-t="submit">Quiero participar</button>
+  </form>
+
+  <!-- Inscrito -->
+  <section class="done" id="st-done" hidden>
+    <div class="art"><img src="/ilustraciones/idea.svg" alt="" width="150" height="150"></div>
+    <h2 data-t="doneH">¡Ya estás participando!</h2>
+    <p data-t="doneP">Te mandamos un correo de confirmación desde info@courseworq.com. Si no lo ves, revisa tu carpeta de promociones o spam.</p>
+  </section>
+
+  <details id="reglamento">
+    <summary data-t="rulesT">Reglamento de la rifa</summary>
+    <ol>
+      <li data-t="r1">Organiza Courseworq, LLC (131 Continental Dr Suite 305, Newark, DE 19713, Estados Unidos), dentro del Regional Scrum Gathering Centroamérica 2026, en Antigua Guatemala.</li>
+      <li data-t="r2">Pueden participar personas mayores de edad de cualquier país que asistan al evento. No participa el equipo de Courseworq.</li>
+      <li data-t="r3">Las inscripciones se reciben solo el 6 de noviembre de 2026, en esta página, hasta la hora indicada en el evento. Se acepta una inscripción por persona y por correo.</li>
+      <li data-t="r4">Participar es gratis. Para hacerlo, la persona se suscribe al newsletter de Courseworq; puede darse de baja en cualquier momento.</li>
+      <li data-t="r5">El premio es un ejemplar firmado de Scrum Mastery de Geoff Watts, en español. No se cambia por dinero ni por otro premio.</li>
+      <li data-t="r6">El ganador se elige al azar entre todas las inscripciones válidas y se anuncia el mismo día durante el evento.</li>
+      <li data-t="r7">La persona ganadora debe reclamar el libro en el evento antes de que termine. Si no lo hace, se elige otra persona al azar.</li>
+      <li data-t="r8">Los datos se usan solo para esta rifa y para el newsletter, según nuestra política de privacidad.</li>
+    </ol>
+  </details>
+</main>
+
+<footer>© 2026 Courseworq, LLC · <a href="/privacidad.html" data-t="privacy">Política de privacidad</a></footer>
+
+<script>
+(function(){
+  // ---- Configuración ----
+  // URL de la aplicación web de Google Apps Script (se pega al publicar el script)
+  var ENDPOINT = '';
+  var OPEN  = new Date('2026-11-06T07:00:00-06:00');
+  var CLOSE = new Date('2026-11-06T15:30:00-06:00');
+
+  var T = {
+    en:{eyebrow:'RSGCA26 · Antigua Guatemala', h1:'Take home a signed <span class="mark">Scrum Mastery</span>',
+      lede:'We are raffling a signed copy of Scrum Mastery by Geoff Watts, Spanish edition, among people at the Regional Scrum Gathering Central America 2026.',
+      prizeSub:'Geoff Watts · Spanish edition · Signed',
+      f1:'Sign-ups open only on Friday, November 6, during the event.',
+      f2:'You can come from any country; you just need to be at the event to receive the book.',
+      f3:'You enter by subscribing to our newsletter. It’s free and you can unsubscribe anytime.',
+      beforeH:'The raffle opens on November 6', beforeP:'Come back to this page on Friday during the Gathering.', days:'days', hours:'hours', mins:'min',
+      afterH:'The raffle is closed', afterP:'Thanks for taking part. If you signed up, check your email for next steps.',
+      lName:'Full name', lEmail:'Email', lCountry:'Country', pick:'Choose your country', other:'Other',
+      cPresent:'I’m at the Regional Scrum Gathering Central America 2026 and can receive the book there.',
+      cConsent:'I agree to subscribe to the Courseworq newsletter and to the <a href="#reglamento">raffle rules</a>.',
+      submit:'Enter the raffle', doneH:'You’re in!', doneP:'We sent a confirmation email from info@courseworq.com. If you don’t see it, check your promotions or spam folder.',
+      rulesT:'Raffle rules',
+      r1:'Organized by Courseworq, LLC (131 Continental Dr Suite 305, Newark, DE 19713, United States), at the Regional Scrum Gathering Central America 2026 in Antigua Guatemala.',
+      r2:'Adults from any country attending the event may enter. Courseworq team members may not.',
+      r3:'Entries are accepted only on November 6, 2026, on this page, until the time announced at the event. One entry per person and per email.',
+      r4:'Entering is free. To enter, you subscribe to the Courseworq newsletter; you can unsubscribe at any time.',
+      r5:'The prize is one signed copy of Scrum Mastery by Geoff Watts, Spanish edition. It cannot be exchanged for cash or another prize.',
+      r6:'The winner is drawn at random from all valid entries and announced the same day during the event.',
+      r7:'The winner must claim the book at the event before it ends. Otherwise, another person is drawn at random.',
+      r8:'Data is used only for this raffle and the newsletter, as described in our privacy policy.',
+      privacy:'Privacy policy',
+      eName:'Write your name.', eEmail:'Write a valid email, for example name@company.com.', eCountry:'Choose your country.',
+      ePresent:'You need to be at the event to take part.', eConsent:'You need to accept the newsletter and the rules to take part.',
+      eDup:'This email is already in the raffle. Only one entry per person.', eClosed:'The raffle isn’t open right now.', eNet:'We couldn’t save your entry. Check your connection and try again.'},
+    pt:{eyebrow:'RSGCA26 · Antigua Guatemala', h1:'Leve um <span class="mark">Scrum Mastery</span> autografado',
+      lede:'Vamos sortear um exemplar autografado de Scrum Mastery de Geoff Watts, em espanhol, entre quem estiver no Regional Scrum Gathering Central America 2026.',
+      prizeSub:'Geoff Watts · Edição em espanhol · Autografado',
+      f1:'Inscrições só na sexta-feira, 6 de novembro, durante o evento.',
+      f2:'Você pode vir de qualquer país; só precisa estar no evento para receber o livro.',
+      f3:'Você participa ao se inscrever na nossa newsletter. É grátis e pode cancelar quando quiser.',
+      beforeH:'O sorteio abre em 6 de novembro', beforeP:'Volte a esta página na sexta-feira durante o Gathering.', days:'dias', hours:'horas', mins:'min',
+      afterH:'O sorteio foi encerrado', afterP:'Obrigado por participar. Se você se inscreveu, confira seu e-mail para os próximos passos.',
+      lName:'Nome completo', lEmail:'E-mail', lCountry:'País', pick:'Escolha seu país', other:'Outro',
+      cPresent:'Estou no Regional Scrum Gathering Central America 2026 e posso receber o livro lá.',
+      cConsent:'Aceito me inscrever na newsletter da Courseworq e o <a href="#reglamento">regulamento do sorteio</a>.',
+      submit:'Quero participar', doneH:'Você está participando!', doneP:'Enviamos um e-mail de confirmação de info@courseworq.com. Se não aparecer, confira a pasta de promoções ou spam.',
+      rulesT:'Regulamento do sorteio',
+      r1:'Organizado pela Courseworq, LLC (131 Continental Dr Suite 305, Newark, DE 19713, Estados Unidos), no Regional Scrum Gathering Central America 2026, em Antigua Guatemala.',
+      r2:'Podem participar maiores de idade de qualquer país que estejam no evento. A equipe da Courseworq não participa.',
+      r3:'As inscrições são aceitas somente em 6 de novembro de 2026, nesta página, até o horário anunciado no evento. Uma inscrição por pessoa e por e-mail.',
+      r4:'Participar é grátis. Para isso, a pessoa se inscreve na newsletter da Courseworq; pode cancelar a qualquer momento.',
+      r5:'O prêmio é um exemplar autografado de Scrum Mastery de Geoff Watts, em espanhol. Não pode ser trocado por dinheiro nem por outro prêmio.',
+      r6:'O ganhador é sorteado entre todas as inscrições válidas e anunciado no mesmo dia, durante o evento.',
+      r7:'O ganhador deve retirar o livro no evento antes do encerramento. Caso contrário, outra pessoa é sorteada.',
+      r8:'Os dados são usados apenas para este sorteio e para a newsletter, conforme nossa política de privacidade.',
+      privacy:'Política de privacidade',
+      eName:'Escreva seu nome.', eEmail:'Escreva um e-mail válido, por exemplo nome@empresa.com.', eCountry:'Escolha seu país.',
+      ePresent:'Você precisa estar no evento para participar.', eConsent:'Você precisa aceitar a newsletter e o regulamento para participar.',
+      eDup:'Este e-mail já está no sorteio. Só uma inscrição por pessoa.', eClosed:'O sorteio não está aberto agora.', eNet:'Não conseguimos salvar sua inscrição. Verifique sua conexão e tente de novo.'}
+  };
+  var ES = {eName:'Escribe tu nombre.', eEmail:'Escribe un correo válido, por ejemplo nombre@empresa.com.', eCountry:'Elige tu país.',
+    ePresent:'Necesitas estar en el evento para participar.', eConsent:'Necesitas aceptar el newsletter y el reglamento para participar.',
+    eDup:'Este correo ya está en la rifa. Solo se permite una inscripción por persona.', eClosed:'La rifa no está abierta en este momento.', eNet:'No pudimos guardar tu inscripción. Revisa tu conexión e intenta de nuevo.'};
+  var tEls = document.querySelectorAll('[data-t]'), hEls = document.querySelectorAll('[data-th]');
+  tEls.forEach(function(el){ ES[el.getAttribute('data-t')] = el.textContent; });
+  hEls.forEach(function(el){ ES[el.getAttribute('data-th')] = el.innerHTML; });
+  var lang = 'es', btns = document.querySelectorAll('.lang button');
+  function t(k){ var d = T[lang] || ES; return d[k] != null ? d[k] : ES[k]; }
+  function setLang(l, save){
+    lang = (l === 'en' || l === 'pt') ? l : 'es';
+    tEls.forEach(function(el){ el.textContent = t(el.getAttribute('data-t')); });
+    hEls.forEach(function(el){ el.innerHTML = t(el.getAttribute('data-th')); });
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+    btns.forEach(function(b){ b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)); });
+    err.textContent = '';
+    if (save) { try { localStorage.setItem('cwq-lang', lang); } catch (e) {} }
+  }
+  var err = document.getElementById('r-err');
+  btns.forEach(function(b){ b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang'), true); }); });
+  var saved; try { saved = localStorage.getItem('cwq-lang'); } catch (e) {}
+  setLang(saved || (navigator.language || '').slice(0,2).toLowerCase(), false);
+
+  // ---- Estado según la fecha (?prueba abre el formulario antes de tiempo) ----
+  var form = document.getElementById('raffle');
+  var test = /[?&]prueba\b/.test(location.search);
+  var already = false; try { already = !!localStorage.getItem('cwq-rifa-2026'); } catch (e) {}
+  function render(){
+    var now = new Date();
+    var before = now < OPEN && !test, after = now > CLOSE && !test;
+    document.getElementById('st-before').hidden = !before;
+    document.getElementById('st-after').hidden = !after || already;
+    form.hidden = before || after || already;
+    document.getElementById('st-done').hidden = !already;
+    if (before) {
+      var ms = OPEN - now, m = Math.floor(ms / 60000);
+      document.getElementById('cd-d').textContent = Math.floor(m / 1440);
+      document.getElementById('cd-h').textContent = Math.floor(m / 60) % 24;
+      document.getElementById('cd-m').textContent = m % 60;
+    }
+  }
+  render(); setInterval(render, 30000);
+
+  // ---- Envío ----
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('r-name'), email = document.getElementById('r-email'), country = document.getElementById('r-country');
+    var checks = [[!name.value.trim(), 'eName', name], [!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()), 'eEmail', email],
+                  [!country.value, 'eCountry', country], [!document.getElementById('r-present').checked, 'ePresent', document.getElementById('r-present')],
+                  [!document.getElementById('r-consent').checked, 'eConsent', document.getElementById('r-consent')]];
+    for (var i = 0; i < checks.length; i++) { if (checks[i][0]) { err.textContent = t(checks[i][1]); checks[i][2].focus(); return; } }
+    if (document.getElementById('r-honey').value) return;
+    if (!ENDPOINT) { err.textContent = t('eNet'); return; }
+    var btn = document.getElementById('r-btn'); btn.disabled = true; err.textContent = '';
+    fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ name: name.value.trim(), email: email.value.trim(), country: country.value, lang: lang, test: test }) })
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        btn.disabled = false;
+        if (res.ok) { already = true; try { localStorage.setItem('cwq-rifa-2026', '1'); } catch (x) {} render(); window.scrollTo(0, 0); }
+        else { err.textContent = t(res.code === 'duplicate' ? 'eDup' : res.code === 'closed' ? 'eClosed' : 'eNet'); }
+      })
+      .catch(function(){ btn.disabled = false; err.textContent = t('eNet'); });
+  });
+})();
+</script>
+</body>
+</html>
