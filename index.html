@@ -342,7 +342,7 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
 .tool .thumb{margin-bottom:10px}
 .lead-form{display:flex; flex-wrap:wrap; gap:8px; margin-top:4px}
 .lead-form input[type="email"]{
-  flex:1 1 150px; min-width:0; font:inherit; font-size:.9375rem; padding:9px 14px; border-radius:999px;
+  flex:1 1 150px; min-width:0; font:inherit; font-size:1rem; padding:10px 14px; border-radius:999px;
   border:1.5px solid var(--line); background:var(--bg); color:var(--ink);
 }
 .lead-form input[type="email"]:focus{outline:3px solid var(--accent); outline-offset:2px; border-color:var(--accent)}
@@ -446,6 +446,89 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
   .btn{transition:none}
   .btn:hover{transform:none}
 }
+
+/* ---------- Móvil ---------- */
+.mbar{display:none}
+@media (max-width:720px){
+  html{-webkit-text-size-adjust:100%}
+  a, button{-webkit-tap-highlight-color:rgba(82,140,255,.18)}
+  .section{padding-block:56px}
+  .hero{padding-block:32px 72px}
+  h1{margin-top:16px}
+  .lede{font-size:1.0625rem; margin-top:16px}
+  .actions{margin-top:20px}
+  .hero .actions .btn{flex:1 1 100%}
+  .hero-grid{gap:44px}
+
+  /* Canvas de ejemplo más compacto */
+  .canvas{gap:12px; padding:16px}
+  .ros-legend{display:none}
+  .ros-ticks{display:none}
+
+  /* Servicios: ícono al lado del título */
+  .services{gap:28px; margin-top:32px}
+  .service{grid-template-columns:32px minmax(0,1fr); column-gap:14px; row-gap:6px}
+  .service .glyph{width:32px; height:32px; margin:0; grid-row:1 / 3}
+  .audience{margin-top:36px}
+
+  /* Pasos: ilustración pequeña al lado del texto */
+  .steps{grid-template-columns:minmax(0,1fr); gap:26px; margin-top:32px}
+  .step{grid-template-columns:104px minmax(0,1fr); column-gap:16px; row-gap:4px; align-items:start}
+  .step-art{grid-row:1 / 3; width:104px; margin:0}
+  .step-art img{width:100%}
+  .step h3{font-size:1.25rem}
+  .step h3::before{width:32px; height:32px; font-size:1rem}
+  .step p{font-size:.9375rem}
+  .loop-note{margin-top:28px}
+
+  /* Herramientas: carrusel deslizable */
+  .tools{
+    display:flex; gap:16px; max-width:none; margin-top:28px; padding:14px 0 18px;
+    overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-inline:max(16px, env(safe-area-inset-left, 0px));
+    margin-inline:calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding-inline:max(16px, env(safe-area-inset-left, 0px));
+    scrollbar-width:none;
+  }
+  .tools::-webkit-scrollbar{display:none}
+  .tool{flex:0 0 82%; scroll-snap-align:start}
+  .tools-hint{display:flex}
+
+  /* Productos */
+  .products{padding-block:36px}
+  .soon{gap:12px 16px; padding:20px 18px}
+
+  /* Contacto */
+  .contact{padding-block:56px 96px}
+  .contact-art{width:120px}
+  .contact .actions .btn{flex:1 1 auto}
+  .mail{font-size:1.5rem}
+
+  /* Barra fija de acciones */
+  .mbar{
+    position:fixed; z-index:35; left:0; right:0; bottom:0;
+    display:flex; align-items:center; gap:10px;
+    padding:10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+    background:var(--band); border-top:1px solid var(--band-line);
+    transform:translateY(110%); transition:transform .25s ease;
+  }
+  .mbar.show{transform:none}
+  .mbar .btn{flex:1}
+  .mbar-icon{flex:none; width:46px; height:46px; display:grid; place-items:center; border-radius:50%; border:2px solid var(--band-line); color:var(--band-ink)}
+  .mbar-icon svg{width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
+  .site-footer{padding-bottom:calc(28px + 76px)}
+
+  /* Aviso RSGCA compacto */
+  .sponsor{grid-template-columns:64px minmax(0,1fr); column-gap:12px; row-gap:4px; align-items:center; padding:14px 40px 14px 14px; left:max(12px, env(safe-area-inset-left, 0px)); right:max(12px, env(safe-area-inset-right, 0px)); width:auto; bottom:calc(12px + env(safe-area-inset-bottom, 0px))}
+  .sponsor-logo{width:58px; grid-row:1 / 3}
+  .sponsor-kicker{display:none}
+  .sponsor.taped::before{width:54px; height:16px; top:-8px}
+  .sponsor-text{font-size:.8125rem; line-height:1.4}
+  .sponsor .btn{padding:7px 12px; font-size:.8125rem}
+  body.mbar-on .sponsor{bottom:calc(80px + env(safe-area-inset-bottom, 0px))}
+}
+.tools-hint{display:none; align-items:center; gap:8px; margin-top:6px; font-size:.8125rem; color:var(--ink-soft)}
+.tools-hint i{display:block; width:7px; height:7px; border-radius:50%; background:var(--line)}
+.tools-hint i.on{background:var(--accent); width:18px; border-radius:4px}
+@media (prefers-reduced-motion: reduce){ .mbar{transition:none} }
 </style>
 </head>
 <body>
@@ -689,6 +772,7 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
           <p class="desc" data-i18n="t3">Nuestra guía para facilitadores que diseñan foros y conversaciones con intención, paso a paso.</p>
         </article>
       </div>
+      <div class="tools-hint" aria-hidden="true"><i class="on"></i><i></i><i></i><span data-i18n="swipe">Desliza para ver más</span></div>
     </div>
   </section>
 
@@ -767,6 +851,12 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
   </div>
 </footer>
 
+<nav class="mbar" id="mbar" aria-label="Acciones rápidas" hidden>
+  <a class="btn btn-gold" href="#contacto" data-i18n="navCta">Conversemos</a>
+  <a class="mbar-icon" href="mailto:info@courseworq.com" aria-label="info@courseworq.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></a>
+  <a class="mbar-icon" href="tel:+18187406515" aria-label="+1 818 740 6515"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5 9 3l1.6 4.2-2 1.4a12 12 0 0 0 6.8 6.8l1.4-2L21 15l-.5 2.4A2.5 2.5 0 0 1 18 19.5 15.5 15.5 0 0 1 4.5 6a2.5 2.5 0 0 1 2.1-2.5z"/></svg></a>
+</nav>
+
 <aside class="sponsor taped one" id="sponsor" hidden aria-label="Regional Scrum Gathering Central America 2026">
   <button class="sponsor-close" id="sponsor-close" type="button" aria-label="Cerrar aviso" data-i18n-aria="spClose">&times;</button>
   <svg class="sponsor-logo" viewBox="0 0 1195.0596 979.8558" role="img" aria-label="Regional Scrum Gathering Central America 2026"><use href="#rsgca"/></svg>
@@ -824,6 +914,7 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
     spClose:'Close notice', spK:'Proud sponsors',
     spT:'Courseworq sponsors the Regional Scrum Gathering Central America 2026. See you November 4–6 in Antigua Guatemala.',
     spCta:'See the event',
+    swipe:'Swipe to see more',
     prodTag:'Coming soon', prodTitle:'Products',
     prodText:"We partner with several digital products, and you'll be able to explore them here soon. In the meantime, ask us for details.",
     prodBtn:'Ask for information', prodSubject:'Product information',
@@ -872,6 +963,7 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
     spClose:'Fechar aviso', spK:'Patrocinadores orgulhosos',
     spT:'A Courseworq patrocina o Regional Scrum Gathering Central America 2026. Nos vemos de 4 a 6 de novembro em Antigua Guatemala.',
     spCta:'Ver o evento',
+    swipe:'Deslize para ver mais',
     prodTag:'Em breve', prodTitle:'Produtos',
     prodText:'Somos parceiros de vários produtos digitais e em breve você poderá conhecê-los aqui. Enquanto isso, peça informações.',
     prodBtn:'Pedir informações', prodSubject:'Informações sobre produtos',
@@ -975,6 +1067,33 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
       }).then(finish, finish);
     } catch (err) { finish(); }
   });
+
+  // Barra fija en móvil: aparece después del inicio y se esconde en contacto
+  var mbar = document.getElementById('mbar');
+  var heroEl = document.getElementById('inicio');
+  var contactEl = document.getElementById('contacto');
+  if ('IntersectionObserver' in window) {
+    var heroVis = true, contactVis = false;
+    mbar.hidden = false;
+    var upd = function(){
+      var on = !heroVis && !contactVis;
+      mbar.classList.toggle('show', on);
+      document.body.classList.toggle('mbar-on', on && getComputedStyle(mbar).display !== 'none');
+    };
+    new IntersectionObserver(function(es){ heroVis = es[0].isIntersecting; upd(); }).observe(heroEl);
+    new IntersectionObserver(function(es){ contactVis = es[0].isIntersecting; upd(); }).observe(contactEl);
+  }
+  // Puntos del carrusel de herramientas
+  var toolsEl = document.querySelector('.tools');
+  var dots = document.querySelectorAll('.tools-hint i');
+  toolsEl.addEventListener('scroll', function(){
+    var cards = toolsEl.children, best = 0, bestD = Infinity;
+    for (var i = 0; i < cards.length; i++) {
+      var d = Math.abs(cards[i].getBoundingClientRect().left - toolsEl.getBoundingClientRect().left);
+      if (d < bestD) { bestD = d; best = i; }
+    }
+    dots.forEach(function(dt, i){ dt.classList.toggle('on', i === best); });
+  }, { passive: true });
 
   // Aviso de patrocinio del RSGCA26: se oculta solo al terminar el evento
   var sponsor = document.getElementById('sponsor');
