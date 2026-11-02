@@ -1097,16 +1097,16 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
 
   // Aviso de patrocinio del RSGCA26: se oculta solo al terminar el evento
   var sponsor = document.getElementById('sponsor');
-  var sponsorKey = 'cwq-sponsor-rsgca26';
+  var sponsorKey = 'cwq-sponsor-rsgca26-v2';
   var eventEnd = Date.UTC(2026, 10, 7, 6, 0, 0);
   var dismissed = false;
-  try { dismissed = !!localStorage.getItem(sponsorKey); } catch (e) {}
+  try { dismissed = !!sessionStorage.getItem(sponsorKey); } catch (e) {}
   if (Date.now() < eventEnd && !dismissed) {
     setTimeout(function(){ sponsor.hidden = false; }, 2500);
   }
   document.getElementById('sponsor-close').addEventListener('click', function(){
     sponsor.hidden = true;
-    try { localStorage.setItem(sponsorKey, '1'); } catch (e) {}
+    try { sessionStorage.setItem(sponsorKey, '1'); } catch (e) {}
   });
 })();
 </script>
