@@ -376,6 +376,28 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
 .sponsor-kicker{font-size:.6875rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--accent-ink)}
 .sponsor-text{font-size:.875rem; line-height:1.5; color:var(--ink-soft)}
 
+/* Preguntas frecuentes */
+.faq{display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:clamp(32px, 6vw, 80px); align-items:start}
+@media (max-width:860px){ .faq{grid-template-columns:minmax(0,1fr)} }
+.faq-head{position:sticky; top:96px; min-width:0}
+@media (max-width:860px){ .faq-head{position:static} }
+.faq-more{margin-top:16px; color:var(--ink-soft)}
+.faq-more a{color:var(--accent-ink)}
+.faq-list{min-width:0; border-top:2px solid var(--ink)}
+.faq-item{border-bottom:1.5px dashed var(--line)}
+.faq-item summary{
+  list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px;
+  padding:20px 0; font-weight:600; font-size:var(--step-1); line-height:1.35;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary i{flex:none; width:26px; height:26px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12.4 4.2c-.3 5.4.2 10.3-.6 15.6M4.3 12.6c5.2-.6 10.4.3 15.5-.7' fill='none' stroke='%23528CFF' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat; transition:transform .2s ease}
+.faq-item[open] summary i{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4.3 12.6c5.2-.6 10.4.3 15.5-.7' fill='none' stroke='%23ED3E5C' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E"); transform:rotate(-8deg)}
+.faq-item summary:hover span{text-decoration:underline; text-decoration-color:var(--gold); text-decoration-thickness:3px; text-underline-offset:4px}
+.faq-item summary:focus-visible{outline:3px solid var(--accent); outline-offset:4px; border-radius:4px}
+.faq-item p{margin:0; padding:0 40px 22px 0; color:var(--ink-soft); max-width:62ch}
+.faq-item p a{color:var(--accent-ink)}
+@media (prefers-reduced-motion: reduce){ .faq-item summary i{transition:none} }
+
 /* Productos: próximamente */
 .products{padding-block:clamp(40px, 5vw, 56px)}
 .soon{
@@ -534,7 +556,7 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
 .tools-hint i.on{background:var(--accent); width:18px; border-radius:4px}
 @media (prefers-reduced-motion: reduce){ .mbar{transition:none} }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://courseworq.com/#org", "name": "Courseworq", "legalName": "Courseworq, LLC", "url": "https://courseworq.com/", "logo": "https://courseworq.com/logo.svg", "image": "https://courseworq.com/og-image.png", "slogan": "Curiosity crafted", "description": "Comunidad de Learning Experience Design. Ayudamos a trainers y facilitadores a diseñar sesiones, talleres y programas que se sienten, se viven y se recuerdan.", "email": "info@courseworq.com", "telephone": "+1-818-740-6515", "address": {"@type": "PostalAddress", "streetAddress": "131 Continental Dr Suite 305", "addressLocality": "Newark", "addressRegion": "DE", "postalCode": "19713", "addressCountry": "US"}, "areaServed": ["Latin America", "Central America", "United States", "Brazil"], "knowsAbout": ["Learning Experience Design", "Instructional design", "Facilitation", "Training design", "Agile training"], "sameAs": ["https://www.linkedin.com/company/courseworq/", "https://www.instagram.com/courseworq.lxd/"]}, {"@type": "WebSite", "@id": "https://courseworq.com/#website", "url": "https://courseworq.com/", "name": "Courseworq", "inLanguage": ["es", "en", "pt-BR"], "publisher": {"@id": "https://courseworq.com/#org"}}, {"@type": "WebPage", "@id": "https://courseworq.com/#page", "url": "https://courseworq.com/", "name": "Courseworq · Diseño de experiencias de aprendizaje (LXD)", "description": "Comunidad de Learning Experience Design. Ayudamos a trainers y facilitadores a diseñar sesiones, talleres y programas que se sienten, se viven y se recuerdan.", "inLanguage": "es", "isPartOf": {"@id": "https://courseworq.com/#website"}, "about": {"@id": "https://courseworq.com/#org"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://courseworq.com/#org", "name": "Courseworq", "legalName": "Courseworq, LLC", "url": "https://courseworq.com/", "logo": "https://courseworq.com/logo.svg", "image": "https://courseworq.com/og-image.png", "slogan": "Curiosity crafted", "description": "Comunidad de Learning Experience Design. Ayudamos a trainers y facilitadores a diseñar sesiones, talleres y programas que se sienten, se viven y se recuerdan.", "email": "info@courseworq.com", "telephone": "+1-818-740-6515", "address": {"@type": "PostalAddress", "streetAddress": "131 Continental Dr Suite 305", "addressLocality": "Newark", "addressRegion": "DE", "postalCode": "19713", "addressCountry": "US"}, "areaServed": ["Latin America", "Central America", "United States", "Brazil"], "knowsAbout": ["Learning Experience Design", "Instructional design", "Facilitation", "Training design", "Agile training"], "sameAs": ["https://www.linkedin.com/company/courseworq/", "https://www.instagram.com/courseworq.lxd/"]}, {"@type": "WebSite", "@id": "https://courseworq.com/#website", "url": "https://courseworq.com/", "name": "Courseworq", "inLanguage": ["es", "en", "pt-BR"], "publisher": {"@id": "https://courseworq.com/#org"}}, {"@type": "WebPage", "@id": "https://courseworq.com/#page", "url": "https://courseworq.com/", "name": "Courseworq · Diseño de experiencias de aprendizaje (LXD)", "description": "Comunidad de Learning Experience Design. Ayudamos a trainers y facilitadores a diseñar sesiones, talleres y programas que se sienten, se viven y se recuerdan.", "inLanguage": "es", "isPartOf": {"@id": "https://courseworq.com/#website"}, "about": {"@id": "https://courseworq.com/#org"}}, {"@type": "FAQPage", "@id": "https://courseworq.com/#preguntas", "inLanguage": "es", "mainEntity": [{"@type": "Question", "name": "¿Qué es Learning Experience Design (LXD)?", "acceptedAnswer": {"@type": "Answer", "text": "Es la disciplina de diseñar experiencias de aprendizaje centradas en quien aprende. Combina diseño instruccional, facilitación y diseño de experiencias para que una sesión no solo transmita contenido, sino que logre un cambio concreto en lo que las personas saben, hacen o deciden."}}, {"@type": "Question", "name": "¿En qué se diferencia del diseño instruccional?", "acceptedAnswer": {"@type": "Answer", "text": "El diseño instruccional se enfoca en ordenar el contenido y los objetivos. El LXD parte de ahí, pero pone en el centro a la persona: su contexto, lo que ya trae, cómo vive la sesión y qué momentos va a recordar. Por eso cuidamos el ritmo y los momentos clave tanto como el contenido."}}, {"@type": "Question", "name": "¿Con quién trabaja Courseworq?", "acceptedAnswer": {"@type": "Answer", "text": "Con trainers, capacitadores y facilitadores, equipos de L&D y talento, Agile Coaches y Scrum Masters, y organizadores de conferencias y comunidades. En general, con cualquier persona que necesite convertir lo que sabe en una experiencia de la que otras personas aprendan."}}, {"@type": "Question", "name": "¿Diseñan sesiones presenciales o en línea?", "acceptedAnswer": {"@type": "Answer", "text": "Las dos. Diseñamos sesiones, talleres y programas para el salón, en línea o híbridos, y adaptamos las actividades, los tiempos y los materiales a cada formato."}}, {"@type": "Question", "name": "¿Qué es el Session Design Canvas?", "acceptedAnswer": {"@type": "Answer", "text": "Es nuestra herramienta para diseñar una sesión en una sola hoja A3: convierte una idea de charla en una estructura clara, desde la promesa hasta los objetivos de aprendizaje. Puedes descargarlo gratis en la sección de Herramientas."}}, {"@type": "Question", "name": "¿Cómo empiezo un proyecto con Courseworq?", "acceptedAnswer": {"@type": "Answer", "text": "Escríbenos a info@courseworq.com y cuéntanos qué sesión, taller o programa tienes en mente, para quién es y para cuándo. Empezamos con una conversación sobre el propósito y lo que quieres que tus participantes se lleven."}}]}]}</script>
 </head>
 <body>
 
@@ -795,6 +817,43 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
     </div>
   </section>
 
+  <!-- Preguntas frecuentes -->
+  <section class="section faq-sec" id="preguntas">
+    <div class="wrap faq">
+      <div class="faq-head">
+        <p class="kicker" data-i18n="faqK">Preguntas frecuentes</p>
+        <h2 data-i18n="faqH">Lo que nos preguntan seguido</h2>
+        <p class="faq-more" data-i18n-html="faqMore">¿No ves tu pregunta? Escríbenos a <a href="mailto:info@courseworq.com">info@courseworq.com</a>.</p>
+      </div>
+      <div class="faq-list">
+          <details class="faq-item" open>
+            <summary><span data-i18n-html="faqQ1">¿Qué es Learning Experience Design (LXD)?</span><i aria-hidden="true"></i></summary>
+            <p data-i18n-html="faqA1">Es la disciplina de diseñar experiencias de aprendizaje centradas en quien aprende. Combina diseño instruccional, facilitación y diseño de experiencias para que una sesión no solo transmita contenido, sino que logre un cambio concreto en lo que las personas saben, hacen o deciden.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span data-i18n-html="faqQ2">¿En qué se diferencia del diseño instruccional?</span><i aria-hidden="true"></i></summary>
+            <p data-i18n-html="faqA2">El diseño instruccional se enfoca en ordenar el contenido y los objetivos. El LXD parte de ahí, pero pone en el centro a la persona: su contexto, lo que ya trae, cómo vive la sesión y qué momentos va a recordar. Por eso cuidamos el ritmo y los momentos clave tanto como el contenido.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span data-i18n-html="faqQ3">¿Con quién trabaja Courseworq?</span><i aria-hidden="true"></i></summary>
+            <p data-i18n-html="faqA3">Con trainers, capacitadores y facilitadores, equipos de L&amp;D y talento, Agile Coaches y Scrum Masters, y organizadores de conferencias y comunidades. En general, con cualquier persona que necesite convertir lo que sabe en una experiencia de la que otras personas aprendan.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span data-i18n-html="faqQ4">¿Diseñan sesiones presenciales o en línea?</span><i aria-hidden="true"></i></summary>
+            <p data-i18n-html="faqA4">Las dos. Diseñamos sesiones, talleres y programas para el salón, en línea o híbridos, y adaptamos las actividades, los tiempos y los materiales a cada formato.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span data-i18n-html="faqQ5">¿Qué es el Session Design Canvas?</span><i aria-hidden="true"></i></summary>
+            <p data-i18n-html="faqA5">Es nuestra herramienta para diseñar una sesión en una sola hoja A3: convierte una idea de charla en una estructura clara, desde la promesa hasta los objetivos de aprendizaje. Puedes <a href="#herramientas">descargarlo gratis</a> en la sección de Herramientas.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span data-i18n-html="faqQ6">¿Cómo empiezo un proyecto con Courseworq?</span><i aria-hidden="true"></i></summary>
+            <p data-i18n-html="faqA6">Escríbenos a <a href="mailto:info@courseworq.com">info@courseworq.com</a> y cuéntanos qué sesión, taller o programa tienes en mente, para quién es y para cuándo. Empezamos con una conversación sobre el propósito y lo que quieres que tus participantes se lleven.</p>
+          </details>
+      </div>
+    </div>
+  </section>
+
   <!-- Contacto -->
   <section class="contact" id="contacto">
     <svg class="spark one" aria-hidden="true"><use href="#sparkle"/></svg>
@@ -920,6 +979,21 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
     spT:'Courseworq sponsors the Regional Scrum Gathering Central America 2026. See you November 4–6 in Antigua Guatemala.',
     spCta:'See the event',
     swipe:'Swipe to see more',
+    faqK:"FAQ",
+    faqH:"What people often ask us",
+    faqMore:"Don’t see your question? Write to us at <a href=\"mailto:info@courseworq.com\">info@courseworq.com</a>.",
+    faqQ1:"What is Learning Experience Design (LXD)?",
+    faqA1:"It’s the practice of designing learning experiences around the people who learn. It combines instructional design, facilitation and experience design so a session doesn’t just deliver content, but creates a concrete change in what people know, do or decide.",
+    faqQ2:"How is it different from instructional design?",
+    faqA2:"Instructional design focuses on organizing content and objectives. LXD starts there, but puts the person at the center: their context, what they already bring, how they experience the session and which moments they’ll remember. That’s why we care about pacing and key moments as much as content.",
+    faqQ3:"Who does Courseworq work with?",
+    faqA3:"Trainers and facilitators, L&amp;D and talent teams, Agile Coaches and Scrum Masters, and conference and community organizers. In short, anyone who needs to turn what they know into an experience other people learn from.",
+    faqQ4:"Do you design in-person or online sessions?",
+    faqA4:"Both. We design sessions, workshops and programs for the room, online or hybrid, and adapt activities, timing and materials to each format.",
+    faqQ5:"What is the Session Design Canvas?",
+    faqA5:"It’s our tool for designing a session on a single A3 sheet: it turns a talk idea into a clear structure, from the promise to the learning objectives. You can <a href=\"#herramientas\">download it for free</a> in the Tools section.",
+    faqQ6:"How do I start a project with Courseworq?",
+    faqA6:"Write to us at <a href=\"mailto:info@courseworq.com\">info@courseworq.com</a> and tell us which session, workshop or program you have in mind, who it’s for and when. We start with a conversation about the purpose and what you want your participants to take away.",
     prodTag:'Coming soon', prodTitle:'Products',
     prodText:"We partner with several digital products, and you'll be able to explore them here soon. In the meantime, ask us for details.",
     prodBtn:'Ask for information', prodSubject:'Product information',
@@ -969,6 +1043,21 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
     spT:'A Courseworq patrocina o Regional Scrum Gathering Central America 2026. Nos vemos de 4 a 6 de novembro em Antigua Guatemala.',
     spCta:'Ver o evento',
     swipe:'Deslize para ver mais',
+    faqK:"Perguntas frequentes",
+    faqH:"O que mais nos perguntam",
+    faqMore:"Não encontrou sua pergunta? Escreva para <a href=\"mailto:info@courseworq.com\">info@courseworq.com</a>.",
+    faqQ1:"O que é Learning Experience Design (LXD)?",
+    faqA1:"É a disciplina de desenhar experiências de aprendizagem centradas em quem aprende. Combina design instrucional, facilitação e design de experiências para que uma sessão não apenas transmita conteúdo, mas gere uma mudança concreta no que as pessoas sabem, fazem ou decidem.",
+    faqQ2:"Qual a diferença para o design instrucional?",
+    faqA2:"O design instrucional foca em organizar o conteúdo e os objetivos. O LXD parte daí, mas coloca a pessoa no centro: seu contexto, o que ela já traz, como vive a sessão e quais momentos vai lembrar. Por isso cuidamos do ritmo e dos momentos-chave tanto quanto do conteúdo.",
+    faqQ3:"Com quem a Courseworq trabalha?",
+    faqA3:"Com trainers, instrutores e facilitadores, times de L&amp;D e talentos, Agile Coaches e Scrum Masters, e organizadores de conferências e comunidades. Em geral, com qualquer pessoa que precise transformar o que sabe em uma experiência com a qual outras pessoas aprendam.",
+    faqQ4:"Vocês desenham sessões presenciais ou online?",
+    faqA4:"As duas. Desenhamos sessões, workshops e programas para a sala, online ou híbridos, e adaptamos atividades, tempos e materiais a cada formato.",
+    faqQ5:"O que é o Session Design Canvas?",
+    faqA5:"É nossa ferramenta para desenhar uma sessão em uma única folha A3: transforma uma ideia de palestra em uma estrutura clara, da promessa aos objetivos de aprendizagem. Você pode <a href=\"#herramientas\">baixá-lo grátis</a> na seção Ferramentas.",
+    faqQ6:"Como começo um projeto com a Courseworq?",
+    faqA6:"Escreva para <a href=\"mailto:info@courseworq.com\">info@courseworq.com</a> contando qual sessão, workshop ou programa você tem em mente, para quem é e para quando. Começamos com uma conversa sobre o propósito e o que você quer que seus participantes levem.",
     prodTag:'Em breve', prodTitle:'Produtos',
     prodText:'Somos parceiros de vários produtos digitais e em breve você poderá conhecê-los aqui. Enquanto isso, peça informações.',
     prodBtn:'Pedir informações', prodSubject:'Informações sobre produtos',
