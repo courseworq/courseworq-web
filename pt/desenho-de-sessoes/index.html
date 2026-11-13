@@ -563,7 +563,7 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
 .tools-hint i.on{background:var(--accent); width:18px; border-radius:4px}
 @media (prefers-reduced-motion: reduce){ .mbar{transition:none} }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "@id": "https://courseworq.com/pt/desenho-de-sessoes/#service", "name": "Desenho de sessões e programas", "description": "Transformamos seu conteúdo em sessões, workshops e programas com objetivos claros, bom ritmo e momentos que as pessoas lembram. Presencial, online ou híbrido.", "url": "https://courseworq.com/pt/desenho-de-sessoes/", "serviceType": "Desenho de sessões e programas", "inLanguage": "pt-BR", "provider": {"@type": "Organization", "@id": "https://courseworq.com/#org", "name": "Courseworq", "url": "https://courseworq.com/"}, "areaServed": ["Latin America", "Central America", "United States", "Brazil"], "audience": {"@type": "Audience", "audienceType": "Trainers e instrutores, Times de L&D e talentos, Agile Coaches e Scrum Masters, Palestrantes de conferências"}, "offers": {"@type": "Offer", "priceCurrency": "USD", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 500, "priceCurrency": "USD"}, "description": "pelo desenho de uma sessão de 1 hora"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://courseworq.com/pt/"}, {"@type": "ListItem", "position": 2, "name": "Desenho de sessões e programas", "item": "https://courseworq.com/pt/desenho-de-sessoes/"}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "@id": "https://courseworq.com/pt/desenho-de-sessoes/#service", "name": "Desenho de sessões e programas", "description": "Transformamos seu conteúdo em sessões, workshops e programas com objetivos claros, bom ritmo e momentos que as pessoas lembram. Presencial, online ou híbrido.", "url": "https://courseworq.com/pt/desenho-de-sessoes/", "serviceType": "Desenho de sessões e programas", "inLanguage": "pt-BR", "provider": {"@type": "Organization", "@id": "https://courseworq.com/#org", "name": "Courseworq", "url": "https://courseworq.com/"}, "areaServed": ["Latin America", "Central America", "United States", "Brazil"], "audience": {"@type": "Audience", "audienceType": "Trainers e instrutores, Times de L&D e talentos, Agile Coaches e Scrum Masters, Palestrantes de conferências"}, "offers": {"@type": "Offer", "priceCurrency": "USD", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 500, "priceCurrency": "USD"}, "description": "Sessão de 1 hora"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://courseworq.com/pt/"}, {"@type": "ListItem", "position": 2, "name": "Desenho de sessões e programas", "item": "https://courseworq.com/pt/desenho-de-sessoes/"}]}]}</script>
 <style>
 /* Páginas de servicio */
 .svc-hero{position:relative; overflow:hidden; background:var(--band); color:var(--band-ink); padding-block:clamp(36px, 6vw, 72px) clamp(56px, 8vw, 96px)}
@@ -602,7 +602,10 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
 .ex-steps p{margin:0; color:var(--ink-soft)}
 .price-box{display:grid; gap:4px; justify-items:start; min-width:0}
 .price-from{font-size:.8125rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--gold)}
-.price-amt{font-family:var(--f-display); font-size:clamp(2.5rem, 5vw, 3.5rem); line-height:1; color:var(--band-ink)}
+.tiers{list-style:none; margin:6px 0 0; padding:0; display:grid; gap:14px}
+.tiers li{display:grid; gap:2px}
+.tiers li+li{padding-top:14px; border-top:1px dashed var(--band-line)}
+.price-amt{font-family:var(--f-display); font-size:clamp(2rem, 4vw, 2.75rem); line-height:1; color:var(--band-ink)}
 .price-unit{color:var(--band-ink); font-weight:500}
 .price-note{color:var(--band-soft); font-size:.875rem; margin-top:6px; max-width:36ch}
 .extra{display:grid; grid-template-columns:auto minmax(0,1fr); gap:16px 20px; align-items:start; margin-top:clamp(36px, 5vw, 56px); padding-top:28px; border-top:1.5px dashed var(--line)}
@@ -699,7 +702,7 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
         </div>
       </div>
       <div class="mail-box">
-        <div class="price-box"><span class="price-from">A partir de</span><span class="price-amt">USD 500</span><span class="price-unit">pelo desenho de uma sessão de 1 hora</span><span class="price-note">Sessões mais longas, workshops e programas são orçados conforme o escopo.</span></div>
+        <div class="price-box"><span class="price-from">A partir de</span><ul class="tiers"><li><span class="price-amt">USD 500</span><span class="price-unit">Sessão de 1 hora</span></li><li><span class="price-amt">USD 1,000</span><span class="price-unit">Workshop de meio período, até 4 horas</span></li></ul><span class="price-note">Programas com várias sessões são orçados conforme o escopo.</span></div>
       </div>
     </div>
   </section>

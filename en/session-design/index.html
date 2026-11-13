@@ -563,7 +563,7 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
 .tools-hint i.on{background:var(--accent); width:18px; border-radius:4px}
 @media (prefers-reduced-motion: reduce){ .mbar{transition:none} }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "@id": "https://courseworq.com/en/session-design/#service", "name": "Session and program design", "description": "We turn your content into sessions, workshops and programs with clear objectives, good pacing and moments people remember. In person, online or hybrid.", "url": "https://courseworq.com/en/session-design/", "serviceType": "Session and program design", "inLanguage": "en", "provider": {"@type": "Organization", "@id": "https://courseworq.com/#org", "name": "Courseworq", "url": "https://courseworq.com/"}, "areaServed": ["Latin America", "Central America", "United States", "Brazil"], "audience": {"@type": "Audience", "audienceType": "Trainers, L&D and talent teams, Agile Coaches and Scrum Masters, Conference speakers"}, "offers": {"@type": "Offer", "priceCurrency": "USD", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 500, "priceCurrency": "USD"}, "description": "to design a 1-hour session"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://courseworq.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Session and program design", "item": "https://courseworq.com/en/session-design/"}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "@id": "https://courseworq.com/en/session-design/#service", "name": "Session and program design", "description": "We turn your content into sessions, workshops and programs with clear objectives, good pacing and moments people remember. In person, online or hybrid.", "url": "https://courseworq.com/en/session-design/", "serviceType": "Session and program design", "inLanguage": "en", "provider": {"@type": "Organization", "@id": "https://courseworq.com/#org", "name": "Courseworq", "url": "https://courseworq.com/"}, "areaServed": ["Latin America", "Central America", "United States", "Brazil"], "audience": {"@type": "Audience", "audienceType": "Trainers, L&D and talent teams, Agile Coaches and Scrum Masters, Conference speakers"}, "offers": {"@type": "Offer", "priceCurrency": "USD", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 500, "priceCurrency": "USD"}, "description": "1-hour session"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://courseworq.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Session and program design", "item": "https://courseworq.com/en/session-design/"}]}]}</script>
 <style>
 /* Páginas de servicio */
 .svc-hero{position:relative; overflow:hidden; background:var(--band); color:var(--band-ink); padding-block:clamp(36px, 6vw, 72px) clamp(56px, 8vw, 96px)}
@@ -602,7 +602,10 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
 .ex-steps p{margin:0; color:var(--ink-soft)}
 .price-box{display:grid; gap:4px; justify-items:start; min-width:0}
 .price-from{font-size:.8125rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--gold)}
-.price-amt{font-family:var(--f-display); font-size:clamp(2.5rem, 5vw, 3.5rem); line-height:1; color:var(--band-ink)}
+.tiers{list-style:none; margin:6px 0 0; padding:0; display:grid; gap:14px}
+.tiers li{display:grid; gap:2px}
+.tiers li+li{padding-top:14px; border-top:1px dashed var(--band-line)}
+.price-amt{font-family:var(--f-display); font-size:clamp(2rem, 4vw, 2.75rem); line-height:1; color:var(--band-ink)}
 .price-unit{color:var(--band-ink); font-weight:500}
 .price-note{color:var(--band-soft); font-size:.875rem; margin-top:6px; max-width:36ch}
 .extra{display:grid; grid-template-columns:auto minmax(0,1fr); gap:16px 20px; align-items:start; margin-top:clamp(36px, 5vw, 56px); padding-top:28px; border-top:1.5px dashed var(--line)}
@@ -699,7 +702,7 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
         </div>
       </div>
       <div class="mail-box">
-        <div class="price-box"><span class="price-from">From</span><span class="price-amt">USD 500</span><span class="price-unit">to design a 1-hour session</span><span class="price-note">Longer sessions, workshops and programs are quoted based on scope.</span></div>
+        <div class="price-box"><span class="price-from">From</span><ul class="tiers"><li><span class="price-amt">USD 500</span><span class="price-unit">1-hour session</span></li><li><span class="price-amt">USD 1,000</span><span class="price-unit">Half-day workshop, up to 4 hours</span></li></ul><span class="price-note">Multi-session programs are quoted based on scope.</span></div>
       </div>
     </div>
   </section>
