@@ -113,6 +113,31 @@ section[id]{scroll-margin-top:76px}
 .nav-links{display:flex; gap:28px; list-style:none; margin:0; padding:0}
 .nav-links a{color:var(--band-soft); text-decoration:none; font-weight:500; font-size:.9375rem; transition:color .15s}
 .nav-links a:hover{color:var(--band-ink)}
+.has-sub{position:relative}
+.has-sub > a::after{content:""; display:inline-block; width:7px; height:7px; margin-left:7px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:translateY(-3px) rotate(45deg)}
+.sub{position:absolute; top:100%; left:-16px; z-index:30; min-width:280px; list-style:none; margin:0; padding:10px; display:none;
+  background:var(--surface); border-radius:6px; box-shadow:0 20px 40px -18px rgba(0,0,0,.45)}
+.sub::before{content:""; position:absolute; left:0; right:0; top:-14px; height:14px}
+.has-sub:hover .sub, .has-sub:focus-within .sub{display:grid; gap:2px; margin-top:14px}
+.sub a{display:block; padding:10px 12px; border-radius:4px; color:var(--ink); font-weight:500}
+.sub a:hover{background:var(--surface-2); color:var(--ink)}
+.menu-btn{display:none; width:42px; height:42px; border:1px solid var(--band-line); border-radius:50%; background:transparent; cursor:pointer;
+  flex-direction:column; align-items:center; justify-content:center; gap:4px; padding:0}
+.menu-btn i{display:block; width:16px; height:2px; border-radius:2px; background:var(--band-ink); transition:transform .2s ease, opacity .2s ease}
+.menu-btn[aria-expanded="true"] i:nth-child(2){transform:translateY(6px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] i:nth-child(3){opacity:0}
+.menu-btn[aria-expanded="true"] i:nth-child(4){transform:translateY(-6px) rotate(-45deg)}
+.menu{position:absolute; left:0; right:0; top:100%; background:var(--band); border-top:1px solid var(--band-line); padding-block:18px 24px; max-height:calc(100dvh - 70px); overflow-y:auto; box-shadow:0 24px 40px -10px rgba(0,0,0,.5)}
+.menu-label{font-size:.75rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin:0 0 10px}
+.menu ul{list-style:none; margin:0; padding:0}
+.menu-svc{display:grid; gap:8px}
+.menu-svc a{display:flex; align-items:center; gap:12px; padding:10px; border-radius:6px; background:rgba(255,255,255,.06); color:var(--band-ink); text-decoration:none; font-weight:600}
+.menu-svc img{width:44px; height:44px; flex:none; border-radius:50%; background:var(--b)}
+.menu-links{display:grid; margin-top:16px !important; border-top:1px solid var(--band-line)}
+.menu-links a{display:block; padding:14px 2px; color:var(--band-ink); text-decoration:none; font-weight:500; border-bottom:1px solid var(--band-line)}
+@media (max-width:780px){ .menu-btn{display:inline-flex} }
+@media (min-width:781px){ .menu{display:none !important} }
+@media (prefers-reduced-motion: reduce){ .menu-btn i{transition:none} }
 @media (max-width:780px){ .nav-links{display:none} }
 
 .btn{
@@ -133,7 +158,7 @@ section[id]{scroll-margin-top:76px}
   font:600 .75rem/1 var(--f-body); letter-spacing:.06em; padding:7px 10px; border-radius:999px;
 }
 .lang [aria-pressed="true"]{background:var(--gold); color:var(--on-gold)}
-@media (max-width:420px){ .nav-cta{display:none} }
+@media (max-width:520px){ .nav-cta{display:none} }
 
 /* ---------- Hero ---------- */
 .hero{position:relative; overflow:hidden; background:var(--band); color:var(--band-ink); padding-block:clamp(48px, 8vw, 96px) clamp(64px, 9vw, 112px)}
@@ -244,9 +269,23 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
 .section-lede{color:var(--ink-soft); font-size:var(--step-1); max-width:36em; margin-top:16px}
 
 /* Qué hacemos */
-.services{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:clamp(32px, 4vw, 56px); margin-top:clamp(40px, 5vw, 64px)}
+.services{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:clamp(20px, 3vw, 32px); margin-top:clamp(40px, 5vw, 64px)}
 @media (max-width:860px){ .services{grid-template-columns:minmax(0,1fr)} }
-.service{display:grid; gap:10px; align-content:start; min-width:0}
+.service{position:relative; display:flex; flex-direction:column; align-items:flex-start; gap:10px; min-width:0;
+  background:var(--surface); border-radius:4px; padding:20px 22px 22px;
+  box-shadow:0 1px 0 rgba(13,13,60,.06), 0 18px 32px -24px rgba(13,13,60,.5); transition:transform .18s ease, box-shadow .18s ease}
+.section-alt .service{background:var(--bg)}
+.service:hover{transform:translateY(-3px) rotate(-.3deg); box-shadow:0 1px 0 rgba(13,13,60,.06), 0 24px 40px -24px rgba(13,13,60,.55)}
+.service:focus-within{outline:3px solid var(--accent); outline-offset:3px}
+.service-link{color:inherit; text-decoration:none}
+.service-link::after{content:""; position:absolute; inset:0; border-radius:inherit}
+.service-link:focus-visible{outline:none}
+.service-art{position:relative; isolation:isolate; width:132px; aspect-ratio:1; margin:0 0 6px -6px}
+.service-art::before{content:""; position:absolute; inset:-3%; z-index:-1; background:var(--b); border-radius:52% 48% 44% 56% / 46% 56% 44% 54%; transform:rotate(-8deg)}
+.service-art img{display:block; width:100%; height:auto}
+.service .svc-more{margin-top:auto; padding-top:6px}
+.service:hover .svc-more > span{text-decoration:underline; text-decoration-color:var(--gold); text-decoration-thickness:3px; text-underline-offset:4px}
+.service:hover .svc-more i{transform:translateX(3px)}
 .glyph{width:40px; height:40px; display:block; margin-bottom:8px}
 .service h3{font-size:var(--step-1); font-weight:600; line-height:1.35}
 .service p{color:var(--ink-soft); font-size:.96875rem}
@@ -381,7 +420,6 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
 .svc-more i{font-style:normal; transition:transform .15s ease}
 .svc-more:hover span{text-decoration:underline; text-decoration-color:var(--gold); text-decoration-thickness:3px; text-underline-offset:4px}
 .svc-more:hover i{transform:translateX(3px)}
-@media (max-width:720px){ .svc-more{grid-column:2} }
 
 /* Preguntas frecuentes */
 .faq{display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:clamp(32px, 6vw, 80px); align-items:start}
@@ -455,9 +493,10 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
 
 /* ---------- Footer ---------- */
 .site-footer{padding-block:56px 28px}
-.foot{display:grid; grid-template-columns:minmax(0,1.3fr) repeat(3, minmax(0,1fr)); gap:32px 40px; align-items:start}
-@media (max-width:900px){ .foot{grid-template-columns:repeat(2, minmax(0,1fr))} }
-@media (max-width:520px){ .foot{grid-template-columns:minmax(0,1fr)} }
+.foot{display:grid; grid-template-columns:minmax(0,1.1fr) repeat(4, minmax(0,1fr)); gap:32px 40px; align-items:start}
+@media (max-width:1000px){ .foot{grid-template-columns:repeat(3, minmax(0,1fr))} }
+@media (max-width:640px){ .foot{grid-template-columns:repeat(2, minmax(0,1fr))} .foot-brand{grid-column:1 / -1} }
+@media (max-width:380px){ .foot{grid-template-columns:minmax(0,1fr)} }
 .social{display:grid; gap:8px}
 .social a{display:inline-flex; align-items:center; gap:8px}
 .social svg{width:18px; height:18px; flex:none}
@@ -498,10 +537,14 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
   .ros-legend{display:none}
   .ros-ticks{display:none}
 
-  /* Servicios: ícono al lado del título */
-  .services{gap:28px; margin-top:32px}
-  .service{grid-template-columns:32px minmax(0,1fr); column-gap:14px; row-gap:6px}
-  .service .glyph{width:32px; height:32px; margin:0; grid-row:1 / 3}
+  /* Servicios: tarjeta horizontal con la ilustración a la izquierda */
+  .services{gap:16px; margin-top:28px}
+  .service{display:grid; grid-template-columns:84px minmax(0,1fr); column-gap:14px; row-gap:4px; padding:16px; align-items:start}
+  .service-art{width:84px; margin:0; grid-row:1 / 4}
+  .service h3{font-size:1.0625rem}
+  .service p{font-size:.9375rem}
+  .service .svc-more{padding-top:2px; font-size:.875rem}
+  .service:hover{transform:none}
   .audience{margin-top:36px}
 
   /* Pasos: ilustración pequeña al lado del texto */
@@ -578,7 +621,13 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
   <div class="wrap nav">
     <a class="logo" href="#inicio" aria-label="Courseworq"><svg viewBox="0 0 2966 882" aria-hidden="true" focusable="false"><use href="#logo"/></svg></a>
     <ul class="nav-links">
-      <li><a href="#que-hacemos" data-i18n="nav1">Qué hacemos</a></li>
+      <li class="has-sub"><a href="#que-hacemos" data-i18n="navSvc">Servicios</a>
+        <ul class="sub">
+          <li><a href="/diseno-de-sesiones/" data-i18n="s1t">Diseño de sesiones y programas</a></li>
+          <li><a href="/materiales-de-facilitacion/" data-i18n="s2t">Materiales de facilitación</a></li>
+          <li><a href="/acompanamiento-a-facilitadores/" data-i18n="s3t">Acompañamiento a facilitadores</a></li>
+        </ul>
+      </li>
       <li><a href="#como-trabajamos" data-i18n="nav2">Cómo trabajamos</a></li>
       <li><a href="#herramientas" data-i18n="nav3">Herramientas</a></li>
     </ul>
@@ -589,8 +638,26 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
         <a href="/pt/" hreflang="pt-BR" data-lang="pt" aria-pressed="false">PT</a>
       </div>
       <a class="btn btn-gold btn-sm nav-cta" href="#contacto" data-i18n="navCta">Conversemos</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span class="sr-only" data-i18n="menuBtn">Menú</span><i></i><i></i><i></i></button>
     </div>
   </div>
+  <nav class="menu" id="menu" hidden>
+    <div class="wrap">
+      <p class="menu-label" data-i18n="navSvc">Servicios</p>
+      <ul class="menu-svc">
+        <li><a href="/diseno-de-sesiones/" style="--b:var(--blob-blue)"><img src="/ilustraciones/personas.svg" alt="" width="44" height="44"><span data-i18n="s1t">Diseño de sesiones y programas</span></a></li>
+        <li><a href="/materiales-de-facilitacion/" style="--b:var(--blob-gold)"><img src="/ilustraciones/marcadores.svg" alt="" width="44" height="44"><span data-i18n="s2t">Materiales de facilitación</span></a></li>
+        <li><a href="/acompanamiento-a-facilitadores/" style="--b:var(--blob-red)"><img src="/ilustraciones/mentor.svg" alt="" width="44" height="44"><span data-i18n="s3t">Acompañamiento a facilitadores</span></a></li>
+      </ul>
+      <ul class="menu-links">
+        <li><a href="#como-trabajamos" data-i18n="nav2">Cómo trabajamos</a></li>
+        <li><a href="#herramientas" data-i18n="nav3">Herramientas</a></li>
+        <li><a href="#preguntas" data-i18n="nav4">Preguntas</a></li>
+        <li><a href="#contacto" data-i18n="k5n">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+  <script>/* Menú móvil */(function(){var b=document.getElementById('menu-btn'),m=document.getElementById('menu');if(!b||!m)return;function set(o){m.hidden=!o;b.setAttribute('aria-expanded',String(o));document.documentElement.classList.toggle('menu-open',o);}b.addEventListener('click',function(){set(m.hidden);});m.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();</script>
 </header>
 
 <main>
@@ -678,23 +745,23 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
       </div>
 
       <div class="services">
-        <article class="service">
-          <svg class="glyph" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="16" style="fill:var(--blue)"/></svg>
-          <h3 data-i18n="s1t">Diseño de sesiones y programas</h3>
+        <article class="service" style="--b:var(--blob-blue)">
+          <div class="service-art"><img src="/ilustraciones/personas.svg" alt="" width="200" height="200" loading="lazy"></div>
+          <h3><a class="service-link" href="/diseno-de-sesiones/" data-i18n="s1t">Diseño de sesiones y programas</a></h3>
           <p data-i18n="s1p">Tomamos tu contenido y lo convertimos en una experiencia: objetivos de aprendizaje claros, actividades con intención y un run of show que funciona en el salón o en línea.</p>
-          <a class="svc-more" href="/diseno-de-sesiones/"><span data-i18n="svcMore">Conocer más</span><i aria-hidden="true">→</i></a>
+          <span class="svc-more" aria-hidden="true"><span data-i18n="svcMore">Conocer más</span><i>→</i></span>
         </article>
-        <article class="service">
-          <svg class="glyph" viewBox="0 0 40 40" aria-hidden="true"><use href="#sparkle" x="4" y="4" width="32" height="32" style="fill:var(--gold)"/></svg>
-          <h3 data-i18n="s2t">Materiales de facilitación</h3>
+        <article class="service" style="--b:var(--blob-gold)">
+          <div class="service-art"><img src="/ilustraciones/marcadores.svg" alt="" width="200" height="200" loading="lazy"></div>
+          <h3><a class="service-link" href="/materiales-de-facilitacion/" data-i18n="s2t">Materiales de facilitación</a></h3>
           <p data-i18n="s2p">Guías para facilitadores, canvases, workbooks y decks con identidad propia. Listos para usar y pensados para que otras personas puedan facilitar con ellos.</p>
-          <a class="svc-more" href="/materiales-de-facilitacion/"><span data-i18n="svcMore">Conocer más</span><i aria-hidden="true">→</i></a>
+          <span class="svc-more" aria-hidden="true"><span data-i18n="svcMore">Conocer más</span><i>→</i></span>
         </article>
-        <article class="service">
-          <svg class="glyph" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="13" style="fill:none;stroke:var(--red);stroke-width:6"/></svg>
-          <h3 data-i18n="s3t">Acompañamiento a facilitadores</h3>
+        <article class="service" style="--b:var(--blob-red)">
+          <div class="service-art"><img src="/ilustraciones/mentor.svg" alt="" width="200" height="200" loading="lazy"></div>
+          <h3><a class="service-link" href="/acompanamiento-a-facilitadores/" data-i18n="s3t">Acompañamiento a facilitadores</a></h3>
           <p data-i18n="s3p">Coaching y programas para que quienes facilitan diseñen y den sus propias sesiones con confianza. Desde un ensayo con feedback hasta una incubadora completa.</p>
-          <a class="svc-more" href="/acompanamiento-a-facilitadores/"><span data-i18n="svcMore">Conocer más</span><i aria-hidden="true">→</i></a>
+          <span class="svc-more" aria-hidden="true"><span data-i18n="svcMore">Conocer más</span><i>→</i></span>
         </article>
       </div>
 
@@ -902,6 +969,10 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
       <svg class="foot-slogan" viewBox="0 0 2612 515" role="img" aria-label="Curiosity crafted"><use href="#slogan"/></svg>
     </div>
     <div class="foot-col">
+      <span class="foot-label" data-i18n="navSvc">Servicios</span>
+      <p><a href="/diseno-de-sesiones/" data-i18n="s1t">Diseño de sesiones y programas</a><br><a href="/materiales-de-facilitacion/" data-i18n="s2t">Materiales de facilitación</a><br><a href="/acompanamiento-a-facilitadores/" data-i18n="s3t">Acompañamiento a facilitadores</a></p>
+    </div>
+    <div class="foot-col">
       <span class="foot-label" data-i18n="addrLbl">Dirección</span>
       <address>131 Continental Dr Suite 305<br>Newark, DE 19713<br><span data-i18n="country">Estados Unidos</span></address>
     </div>
@@ -1004,7 +1075,7 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
     faqA5:"It’s our tool for designing a session on a single A3 sheet: it turns a talk idea into a clear structure, from the promise to the learning objectives. You can <a href=\"#herramientas\">download it for free</a> in the Tools section.",
     faqQ6:"How do I start a project with Courseworq?",
     faqA6:"Write to us at <a href=\"mailto:info@courseworq.com\">info@courseworq.com</a> and tell us which session, workshop or program you have in mind, who it’s for and when. We start with a conversation about the purpose and what you want your participants to take away.",
-    svcMore:'Learn more',
+    svcMore:'Learn more', navSvc:'Services', nav4:'FAQ', menuBtn:'Menu', menuClose:'Close menu', k5n:'Contact',
     prodTag:'Coming soon', prodTitle:'Products',
     prodText:"We partner with several digital products, and you'll be able to explore them here soon. In the meantime, ask us for details.",
     prodBtn:'Ask for information', prodSubject:'Product information',
@@ -1069,7 +1140,7 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
     faqA5:"É nossa ferramenta para desenhar uma sessão em uma única folha A3: transforma uma ideia de palestra em uma estrutura clara, da promessa aos objetivos de aprendizagem. Você pode <a href=\"#herramientas\">baixá-lo grátis</a> na seção Ferramentas.",
     faqQ6:"Como começo um projeto com a Courseworq?",
     faqA6:"Escreva para <a href=\"mailto:info@courseworq.com\">info@courseworq.com</a> contando qual sessão, workshop ou programa você tem em mente, para quem é e para quando. Começamos com uma conversa sobre o propósito e o que você quer que seus participantes levem.",
-    svcMore:'Saiba mais',
+    svcMore:'Saiba mais', navSvc:'Serviços', nav4:'Perguntas', menuBtn:'Menu', menuClose:'Fechar menu', k5n:'Contato',
     prodTag:'Em breve', prodTitle:'Produtos',
     prodText:'Somos parceiros de vários produtos digitais e em breve você poderá conhecê-los aqui. Enquanto isso, peça informações.',
     prodBtn:'Pedir informações', prodSubject:'Informações sobre produtos',
