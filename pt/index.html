@@ -376,6 +376,13 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
 .sponsor-kicker{font-size:.6875rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--accent-ink)}
 .sponsor-text{font-size:.875rem; line-height:1.5; color:var(--ink-soft)}
 
+/* Enlace a la página de cada servicio */
+.svc-more{display:inline-flex; align-items:center; gap:8px; margin-top:4px; font-weight:600; font-size:.9375rem; color:var(--accent-ink); text-decoration:none; justify-self:start}
+.svc-more i{font-style:normal; transition:transform .15s ease}
+.svc-more:hover span{text-decoration:underline; text-decoration-color:var(--gold); text-decoration-thickness:3px; text-underline-offset:4px}
+.svc-more:hover i{transform:translateX(3px)}
+@media (max-width:720px){ .svc-more{grid-column:2} }
+
 /* Preguntas frecuentes */
 .faq{display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:clamp(32px, 6vw, 80px); align-items:start}
 @media (max-width:860px){ .faq{grid-template-columns:minmax(0,1fr)} }
@@ -675,16 +682,19 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
           <svg class="glyph" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="16" style="fill:var(--blue)"/></svg>
           <h3 data-i18n="s1t">Desenho de sessões e programas</h3>
           <p data-i18n="s1p">Pegamos seu conteúdo e o transformamos em uma experiência: objetivos de aprendizagem claros, atividades com intenção e um run of show que funciona na sala ou online.</p>
+          <a class="svc-more" href="/pt/desenho-de-sessoes/"><span data-i18n="svcMore">Saiba mais</span><i aria-hidden="true">→</i></a>
         </article>
         <article class="service">
           <svg class="glyph" viewBox="0 0 40 40" aria-hidden="true"><use href="#sparkle" x="4" y="4" width="32" height="32" style="fill:var(--gold)"/></svg>
           <h3 data-i18n="s2t">Materiais de facilitação</h3>
           <p data-i18n="s2p">Guias para facilitadores, canvases, workbooks e decks com identidade própria. Prontos para usar e pensados para que outras pessoas possam facilitar com eles.</p>
+          <a class="svc-more" href="/pt/materiais-de-facilitacao/"><span data-i18n="svcMore">Saiba mais</span><i aria-hidden="true">→</i></a>
         </article>
         <article class="service">
           <svg class="glyph" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="13" style="fill:none;stroke:var(--red);stroke-width:6"/></svg>
           <h3 data-i18n="s3t">Acompanhamento de facilitadores</h3>
           <p data-i18n="s3p">Coaching e programas para que quem facilita desenhe e conduza suas próprias sessões com confiança. De um ensaio com feedback a uma incubadora completa.</p>
+          <a class="svc-more" href="/pt/acompanhamento-de-facilitadores/"><span data-i18n="svcMore">Saiba mais</span><i aria-hidden="true">→</i></a>
         </article>
       </div>
 
@@ -994,6 +1004,7 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
     faqA5:"It’s our tool for designing a session on a single A3 sheet: it turns a talk idea into a clear structure, from the promise to the learning objectives. You can <a href=\"#herramientas\">download it for free</a> in the Tools section.",
     faqQ6:"How do I start a project with Courseworq?",
     faqA6:"Write to us at <a href=\"mailto:info@courseworq.com\">info@courseworq.com</a> and tell us which session, workshop or program you have in mind, who it’s for and when. We start with a conversation about the purpose and what you want your participants to take away.",
+    svcMore:'Learn more',
     prodTag:'Coming soon', prodTitle:'Products',
     prodText:"We partner with several digital products, and you'll be able to explore them here soon. In the meantime, ask us for details.",
     prodBtn:'Ask for information', prodSubject:'Product information',
@@ -1058,6 +1069,7 @@ h2{font-family:var(--f-display); font-weight:400; font-size:var(--step-3); line-
     faqA5:"É nossa ferramenta para desenhar uma sessão em uma única folha A3: transforma uma ideia de palestra em uma estrutura clara, da promessa aos objetivos de aprendizagem. Você pode <a href=\"#herramientas\">baixá-lo grátis</a> na seção Ferramentas.",
     faqQ6:"Como começo um projeto com a Courseworq?",
     faqA6:"Escreva para <a href=\"mailto:info@courseworq.com\">info@courseworq.com</a> contando qual sessão, workshop ou programa você tem em mente, para quem é e para quando. Começamos com uma conversa sobre o propósito e o que você quer que seus participantes levem.",
+    svcMore:'Saiba mais',
     prodTag:'Em breve', prodTitle:'Produtos',
     prodText:'Somos parceiros de vários produtos digitais e em breve você poderá conhecê-los aqui. Enquanto isso, peça informações.',
     prodBtn:'Pedir informações', prodSubject:'Informações sobre produtos',

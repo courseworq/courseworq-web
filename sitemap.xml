@@ -6,7 +6,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://courseworq.com/en/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://courseworq.com/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://courseworq.com/"/>
-    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://courseworq.com/en/</loc>
@@ -14,7 +13,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://courseworq.com/en/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://courseworq.com/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://courseworq.com/"/>
-    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://courseworq.com/pt/</loc>
@@ -22,6 +20,68 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://courseworq.com/en/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://courseworq.com/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://courseworq.com/"/>
-    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://courseworq.com/diseno-de-sesiones/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://courseworq.com/diseno-de-sesiones/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://courseworq.com/en/session-design/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://courseworq.com/pt/desenho-de-sessoes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://courseworq.com/diseno-de-sesiones/"/>
+  </url>
+  <url>
+    <loc>https://courseworq.com/en/session-design/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://courseworq.com/diseno-de-sesiones/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://courseworq.com/en/session-design/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://courseworq.com/pt/desenho-de-sessoes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://courseworq.com/diseno-de-sesiones/"/>
+  </url>
+  <url>
+    <loc>https://courseworq.com/pt/desenho-de-sessoes/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://courseworq.com/diseno-de-sesiones/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://courseworq.com/en/session-design/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://courseworq.com/pt/desenho-de-sessoes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://courseworq.com/diseno-de-sesiones/"/>
+  </url>
+  <url>
+    <loc>https://courseworq.com/materiales-de-facilitacion/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://courseworq.com/materiales-de-facilitacion/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://courseworq.com/en/facilitation-materials/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://courseworq.com/pt/materiais-de-facilitacao/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://courseworq.com/materiales-de-facilitacion/"/>
+  </url>
+  <url>
+    <loc>https://courseworq.com/en/facilitation-materials/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://courseworq.com/materiales-de-facilitacion/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://courseworq.com/en/facilitation-materials/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://courseworq.com/pt/materiais-de-facilitacao/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://courseworq.com/materiales-de-facilitacion/"/>
+  </url>
+  <url>
+    <loc>https://courseworq.com/pt/materiais-de-facilitacao/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://courseworq.com/materiales-de-facilitacion/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://courseworq.com/en/facilitation-materials/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://courseworq.com/pt/materiais-de-facilitacao/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://courseworq.com/materiales-de-facilitacion/"/>
+  </url>
+  <url>
+    <loc>https://courseworq.com/acompanamiento-a-facilitadores/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://courseworq.com/acompanamiento-a-facilitadores/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://courseworq.com/en/facilitator-coaching/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://courseworq.com/pt/acompanhamento-de-facilitadores/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://courseworq.com/acompanamiento-a-facilitadores/"/>
+  </url>
+  <url>
+    <loc>https://courseworq.com/en/facilitator-coaching/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://courseworq.com/acompanamiento-a-facilitadores/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://courseworq.com/en/facilitator-coaching/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://courseworq.com/pt/acompanhamento-de-facilitadores/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://courseworq.com/acompanamiento-a-facilitadores/"/>
+  </url>
+  <url>
+    <loc>https://courseworq.com/pt/acompanhamento-de-facilitadores/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://courseworq.com/acompanamiento-a-facilitadores/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://courseworq.com/en/facilitator-coaching/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://courseworq.com/pt/acompanhamento-de-facilitadores/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://courseworq.com/acompanamiento-a-facilitadores/"/>
   </url>
 </urlset>
